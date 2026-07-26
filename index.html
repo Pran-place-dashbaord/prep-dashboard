@@ -1019,7 +1019,7 @@ function filterBDDs(){
 function renderBDDs(){
   document.getElementById('bdd-grid').innerHTML=BRANDS.map(function(b){
     var tagHtml=b.actions.map(function(a){return '<span class="tag">'+a+'</span>';}).join('');
-    return '<div class="bdd-card" data-id="'+b.id+'" data-sector="'+b.sector+'" data-domain="'+b.domain+'" data-name="'+b.name.toLowerCase()+'" data-actions="'+b.actions.join(',')+'" onclick="openModal(\"'+b.id+'\")">'+
+    return '<div class="bdd-card" data-id="'+b.id+'" data-sector="'+b.sector+'" data-domain="'+b.domain+'" data-name="'+b.name.toLowerCase()+'" data-actions="'+b.actions.join(',')+'" onclick="openModal(this.dataset.id)">'+
       '<div class="card-head"><div class="card-brand">'+b.name+'</div><div class="card-sector">'+b.sector+'</div></div>'+
       '<div class="card-body">'+
       '<div class="card-summary">'+b.summary+'</div>'+
