@@ -180,6 +180,41 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--te
 .d-section ul li::before{content:"•";position:absolute;left:0;color:var(--teal);font-weight:700}
 .d-section ul li strong{color:var(--navy)}
 .d-qbox{background:#FFF7ED;border-left:3px solid var(--amber);padding:10px 13px;border-radius:0 8px 8px 0;font-size:12px;color:#92400E;font-style:italic;line-height:1.6;margin-top:6px}
+
+.intel-wrap{display:grid;grid-template-columns:190px 1fr;gap:0;min-height:550px}
+.intel-sidebar{background:var(--navy);padding:12px 0;border-radius:12px 0 0 12px}
+.intel-sb-btn{display:block;width:100%;text-align:left;padding:10px 16px;font-size:12px;font-weight:500;color:#93C5FD;background:none;border:none;cursor:pointer;border-left:3px solid transparent;transition:all .15s}
+.intel-sb-btn:hover{background:rgba(255,255,255,.08);color:#fff}
+.intel-sb-btn.on{background:rgba(255,255,255,.12);color:#fff;border-left-color:#D97706;font-weight:700}
+.intel-main{background:#fff;border-radius:0 12px 12px 0;border:1px solid var(--border);border-left:none;padding:22px 26px;overflow-y:auto;max-height:80vh}
+.intel-title{font-size:19px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.intel-sub{font-size:13px;color:var(--text);line-height:1.65;padding:10px 14px;background:var(--light);border-radius:8px;border-left:3px solid var(--teal);margin-bottom:18px;font-style:italic}
+.intel-h{font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.05em;margin:16px 0 8px;padding-bottom:4px;border-bottom:1px solid var(--border)}
+.intel-ul{list-style:none;padding:0;margin-bottom:4px}
+.intel-ul li{font-size:13px;color:var(--text);line-height:1.6;padding:5px 0 5px 14px;position:relative;border-bottom:1px solid #F8FAFC}
+.intel-ul li:last-child{border-bottom:none}
+.intel-ul li::before{content:"•";position:absolute;left:0;color:var(--teal);font-weight:700}
+.intel-econ{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:4px}
+.intel-econ-box{background:var(--light);border-radius:8px;padding:9px 11px;font-size:12px;color:var(--text);line-height:1.5;border:1px solid var(--border)}
+.intel-tensions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:4px}
+.intel-t{background:#FEF2F2;border-radius:8px;padding:9px 11px;border:1px solid #FECACA}
+.intel-t strong{display:block;font-size:12px;color:#991B1B;margin-bottom:3px}
+.intel-t span{font-size:12px;color:var(--text);line-height:1.5}
+.intel-nuance{background:#FFF7ED;border-left:4px solid #D97706;border-radius:0 8px 8px 0;padding:14px 16px;margin-top:4px}
+.intel-nuance-lbl{font-size:11px;font-weight:700;color:#92400E;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.intel-nuance ul{list-style:none;padding:0}
+.intel-nuance ul li{font-size:13px;color:#374151;line-height:1.65;padding:5px 0 5px 16px;position:relative;border-bottom:1px dashed #FDE68A}
+.intel-nuance ul li:last-child{border-bottom:none}
+.intel-nuance ul li::before{content:"→";position:absolute;left:0;color:#D97706;font-weight:700;font-size:11px;top:7px}
+@media(max-width:700px){
+  .intel-wrap{grid-template-columns:1fr}
+  .intel-sidebar{border-radius:12px 12px 0 0;padding:8px;display:flex;flex-wrap:wrap;gap:4px}
+  .intel-sb-btn{width:auto;padding:5px 10px;border-radius:14px;border-left:none;font-size:11px}
+  .intel-sb-btn.on{background:#D97706;color:#fff;border-left:none}
+  .intel-main{border-radius:0 0 12px 12px;border:1px solid var(--border);border-top:none;max-height:none}
+  .intel-econ,.intel-tensions{grid-template-columns:1fr}
+}
+
 .tab-content{display:none}.tab-content.active{display:block}
 .divider{height:1px;background:var(--border);margin:16px 0}
 
@@ -345,6 +380,7 @@ document.addEventListener('click', function(e) {
   <div class="main-tab active" onclick="switchTab('bdd',this)">📋 Brand Deep Dives</div>
   <div class="main-tab" onclick="switchTab('ma',this)">⚡ Market Actions</div>
   <div class="main-tab" onclick="switchTab('domain',this)">📚 Domain 101</div>
+  <div class="main-tab" onclick="switchTab('intel',this)">🏭 Industry Intel</div>
   <div class="main-tab" onclick="switchTab('success',this)">✅ Success Stories</div>
   <div class="main-tab t-amber" onclick="switchTab('ip',this)">🎯 Interview Prep</div>
   <div class="main-tab t-green" onclick="switchTab('stories',this)">📖 My Stories</div>
@@ -416,6 +452,22 @@ document.addEventListener('click', function(e) {
 </div>
 
 <!-- TAB 4: SUCCESS -->
+<div id="tab-intel" class="tab-content">
+  <div class="content">
+    <div class="intel-wrap">
+      <div class="intel-sidebar">
+        <button class="intel-sb-btn on" onclick="showIntel('fmcg',this)">&#x1F6D2; FMCG</button>
+        <button class="intel-sb-btn" onclick="showIntel('finserv',this)">&#x1F3E6; Financial Services</button>
+        <button class="intel-sb-btn" onclick="showIntel('consumertech',this)">&#x1F4F1; Consumer Tech</button>
+        <button class="intel-sb-btn" onclick="showIntel('it',this)">&#x1F4BB; IT Services / GCC</button>
+        <button class="intel-sb-btn" onclick="showIntel('auto',this)">&#x1F697; Automobile</button>
+        <button class="intel-sb-btn" onclick="showIntel('realestate',this)">&#x1F3E2; Real Estate</button>
+        <button class="intel-sb-btn" onclick="showIntel('consulting',this)">&#x1F4CA; Consulting</button>
+      </div>
+      <div class="intel-main" id="intel-main">Loading...</div>
+    </div>
+  </div>
+</div>
 <div id="tab-success" class="tab-content">
   <div class="content">
     <div class="sf-grid" id="success-grid"></div>
@@ -1500,8 +1552,188 @@ const NEWS_SOURCES=[
 ];
 
 
+
+// ── INDUSTRY INTEL ────────────────────────────────────────────────────────────
+var INTEL = {
+  fmcg:{
+    name:"FMCG",
+    sub:"Indian FMCG is a distribution-and-brand game being disrupted simultaneously from the top (premiumisation, D2C, acquisitions) and the bottom (quick commerce, private labels, regional challengers).",
+    shifts:["<strong>Volume lagging GDP</strong> — FMCG volumes grew 4-5% while GDP grew 7-8%. Urban India consumed less than expected. 2026 is the recovery year, driven by income tax relief and GST rationalisation.",
+      "<strong>Quick commerce is now infrastructure</strong> — Growing at 70-80% CAGR, in 80+ cities. Brands now pay for shelf space twice: trade margins in kirana AND in-app advertising on Blinkit. The economics of the second shelf are still being figured out.",
+      "<strong>Premiumisation happening in rural, not just urban</strong> — The old assumption (urban = premium, rural = value) is breaking. Rural India is trading up. Brands need a barbell portfolio: mass for volume, premium for margin. The middle is getting squeezed.",
+      "<strong>Private labels and regional brands taking real share</strong> — Reliance Independence, D2C brands, regional players scaling on q-commerce. Big players responding through acquisitions (HUL-Minimalist, Tata Consumer-Capital Foods).",
+      "<strong>Distribution architecture being rebuilt</strong> — Traditional chain (C&F to distributor to retailer) disrupted from both ends. Q-commerce at the retailer end. B2B platforms (Udaan, JioMart Business) at the distributor end."],
+    econ:["Revenue = volume x price. Price growth moderating, volume growth sluggish — real growth under pressure",
+      "Gross margins recovering as commodities ease — cocoa spike hit biscuit companies hard in FY25-26",
+      "Ad and promo spend rising — q-commerce advertising, new entrant defence, more channels to cover",
+      "Distribution is a long-term capex bet — Britannia 18,000 to 30,000+ distributors costs margin today, buys reach tomorrow",
+      "Pricing power is moderate — works better in premium categories, faces resistance in mass"],
+    tensions:[["Premiumisation vs. affordability","Chase margin at the top or defend volume at the mass end?"],
+      ["Brand vs. private labels","National brand equity vs. Reliance structural cost advantage and regional trust"],
+      ["Traditional trade vs. quick commerce","8M kiranas still dominate volume but q-commerce is fastest growing — investing in both is expensive"],
+      ["Volume growth vs. margin","Price hikes masked weak volumes; now must generate real volume growth which means more spend"]],
+    nuance:["The real battle in Indian FMCG is not between brands — it is between distribution models. Whoever controls the last mile in 2028 controls the category.",
+      "Quick commerce is not replacing kirana. It is creating a second shelf that brands must now pay for — and the margin math on that second shelf is still unsolved.",
+      "The most interesting companies are building both ends of the barbell — Britannia going deep rural while launching premium wafer rolls; Reliance building distribution muscle while creating new brands on top of it."]
+  },
+  finserv:{
+    name:"Financial Services",
+    sub:"Indian financial services is at a critical inflection — banks have cleaned up balance sheets and are well-capitalised, but the next growth wave depends on deepening credit penetration, defending NIMs as rates ease, and building digital capability without losing regulatory goodwill.",
+    shifts:["<strong>Balance sheets are the healthiest in a decade</strong> — GNPA ratio dropped from 11.2% in 2018 to 2.1% in Sep 2025. Banks have moved from survival to growth mode. The question: where to deploy that capital profitably.",
+      "<strong>Households moving money away from bank deposits</strong> — Rising mutual fund, equity, and insurance participation means banks face a deposit mobilisation challenge. To attract funds they raise deposit rates — which squeezes NIMs (the spread between lending and borrowing rates).",
+      "<strong>UPI restructured the payments business permanently</strong> — 18+ billion transactions a month. Banks make almost nothing per UPI transaction. Answer being explored: lending, insurance, and investments layered on top of the payments relationship.",
+      "<strong>Insurance penetration is still very low</strong> — India at 4% of GDP vs global average of 7%. Life insurance premiums grew 43% between FY21 and FY25. Government opened 100% FDI in insurance. Multi-decade structural growth — but also a mis-selling risk through bancassurance.",
+      "<strong>Credit growing but becoming selective</strong> — After the microfinance sector crisis in FY25, lenders are more cautious in unsecured retail. NBFCs growing at ~16% annually and expanding into tier-2/3 markets where banks do not reach."],
+    econ:["Revenue = Net Interest Income (NII) + fee income (wealth management, insurance commissions, processing fees)",
+      "NIM is the core profitability metric — currently healthy but expected to compress as RBI cuts rates",
+      "Provisioning has come down as NPAs improve — freeing up profitability for growth investment",
+      "Distribution (branches, apps, agent networks) is a major and rising cost",
+      "Regulatory compliance (RBI, IRDAI, SEBI) is a non-negotiable cost that is rising, not falling"],
+    tensions:[["Growth vs. asset quality","Push credit aggressively in new markets and risk NPAs rising, or grow conservatively and leave share on the table"],
+      ["Digital convenience vs. fraud","More digital = more fraud surface area. India loses billions to digital financial fraud annually"],
+      ["NIM vs. deposit competition","Rates easing helps borrowers but hurts margins; raising deposit rates to compete with mutual funds squeezes NIM further"],
+      ["Bancassurance push vs. mis-selling risk","Insurance sold through bank branches is the largest distribution channel but most mis-sold product. Regulatory risk is real"]],
+    nuance:["The NIM compression story is underappreciated. As RBI cuts rates, banks earn less on their loan book but still must offer competitive deposit rates to retain savers who now have mutual fund alternatives. The margin squeeze is structural, not cyclical.",
+      "The real growth opportunity in financial services is not in metros — it is in the 400 million under-banked Indians in tier-2/3 cities and rural areas. NBFCs are winning here. Banks are following through digital channels and BC networks.",
+      "UPI created a habit but not a business model. Every fintech and bank is now fighting to layer credit, insurance, and investments on top of the UPI relationship — because the payment itself makes no money. That layering war is where the next 5 years of FinServ competition happens."]
+  },
+  consumertech:{
+    name:"Consumer Tech / Growth Platforms",
+    sub:"Indian consumer tech has moved from growth at any cost to profitable growth — the platforms that survived the funding winter are now being asked to prove that unit economics work, not just that users love the product.",
+    shifts:["<strong>Funding winter forced a reckoning with unit economics</strong> — 2022-24 saw massive valuation corrections (Byjus collapse, Paytm regulatory crisis). Survivors did so by cutting burn and proving CAC/LTV ratios make sense. Investors now ask when do you make money, not how fast are you growing.",
+      "<strong>Quick commerce is the defining battleground</strong> — Blinkit, Zepto, Swiggy Instamart growing at 70-80% CAGR. Blinkit has turned EBITDA profitable. The category is moving from 10-minute groceries to 10-minute everything (electronics, pharmacy, fashion).",
+      "<strong>AI moving from feature to product</strong> — Every major platform is embedding AI in personalisation, demand forecasting, fraud detection. The platforms getting real value use it to do existing things faster and cheaper — not to build entirely new things.",
+      "<strong>Profitability timelines have compressed</strong> — Zomato (now Eternal) turned profitable. Nykaa is profitable. The market expectation has shifted — a listed consumer tech company burning heavily without a clear path to profit gets punished.",
+      "<strong>Tier-2/3 expansion is the next frontier — but harder</strong> — Most platforms built their user base in top-8 cities. Next 100 million users are in smaller cities. CAC is higher, AOV is lower, logistics costs are disproportionate."],
+    econ:["Revenue = take rate (commission per transaction) + retail media (brands pay for placement) + subscription + financial services layered on top",
+      "Take rate is under pressure — merchants and restaurant partners resist high commissions",
+      "Retail media (in-app advertising) is fastest-growing, highest-margin revenue stream",
+      "Fixed costs (dark stores, tech infrastructure, delivery fleet) are high but scale well with density",
+      "Contribution margin per order per city is the key operating metric before platform-level EBITDA"],
+    tensions:[["Growth vs. profitability","More cities = more users = more losses in new markets. Balance expansion with protecting margins in mature markets"],
+      ["Platform fees vs. partner margins","High take rates hurt restaurant/merchant partners who then complain publicly or move to competitors"],
+      ["10-minute promise vs. rider safety","Regulators have flagged the 10-minute delivery promise as unsafe. The consumer proposition may need to change"],
+      ["User loyalty vs. discount dependency","Platforms built habits through heavy discounting. Retention without discounts is the real test of product-market fit"]],
+    nuance:["The most interesting metric in consumer tech is not revenue growth — it is contribution margin by cohort. A platform with older users who order at full price and newer users who need heavy discounting is two completely different businesses wearing the same clothes.",
+      "Retail media is quietly becoming the most important revenue line for quick commerce platforms. Blinkit charges brands for in-app placement just like a supermarket charges for eye-level shelf space. This changes the relationship between platforms and FMCG brands fundamentally — the platform is now both distributor AND media owner.",
+      "The battle for the next 100 million users in tier-2 India will be won not by the platform with the best app, but by the one that cracks last-mile logistics profitably in lower-density geographies. That is an operations and infrastructure problem, not a product problem."]
+  },
+  it:{
+    name:"IT Services / GCC",
+    sub:"Indian IT is transitioning from labour arbitrage to value arbitrage — the tension between GCCs taking strategic work in-house, AI compressing headcount needed per unit of output, and clients demanding measurable ROI is reshaping the entire industry.",
+    shifts:["<strong>GCCs are no longer back offices — they are becoming the strategic core</strong> — India has 2,117 GCCs generating $98.4B in revenue. GCCs added ~200,000 employees in FY26 vs ~110,000 for IT services firms. The old outsourcing model increasingly competes with build-your-own-India-capability.",
+      "<strong>AI is changing the unit economics of delivery</strong> — Traditional equation: revenue = headcount x billable hours x billing rate. AI breaks this: if 100 people produce what 150 did before, clients ask why they should pay for 150. Revenue deflation in traditional services — productivity rose faster than pricing models could adapt.",
+      "<strong>Moving from FTE/hour contracts to outcome-based pricing</strong> — We will provide 500 engineers is giving way to We will reduce your claims processing cost by 25% using automation. This is a fundamental business model shift that large IT firms are struggling to make quickly.",
+      "<strong>Discretionary spending weak, mandatory holding</strong> — Clients are cutting transformation projects but maintaining cybersecurity, cloud operations, compliance, and regulatory technology. Indian IT growth muted at 1-3% because the discretionary bucket — where big deals live — is compressed.",
+      "<strong>Mid-tier IT firms outperforming large firms</strong> — Mphasis, Persistent, Coforge growing faster than TCS, Infosys, Wipro. Reason: sharper niche positioning, faster decision-making, less legacy to unwind. Agility matters more than scale in a shifting market."],
+    econ:["Revenue driven by headcount x billing rate — under pressure from AI productivity and pricing renegotiation",
+      "Margins at large firms (~25-27% for TCS) defended through automation and pyramid optimisation",
+      "60% of India IT exports go to the US — significant geopolitical concentration risk",
+      "Deal sizes changing: fewer large mega-deals, more medium managed services and AI implementation projects",
+      "AI/ML, cloud, cybersecurity specialists command 40-60% premium over traditional developers"],
+    tensions:[["AI productivity vs. revenue","More efficient delivery is good for clients but potentially bad for revenue if billing models do not change"],
+      ["GCCs vs. IT services","The boundary between GCC (owns strategic work) and IT firm (executes) is shifting toward GCCs"],
+      ["Scale vs. agility","Large firms have client relationships and delivery infrastructure; smaller firms have speed and specialisation"],
+      ["Talent pyramid disruption","AI attacks entry-level work first. If junior intake falls, how do you develop tomorrow senior engineers?"]],
+    nuance:["Do not say AI will replace IT jobs. Say this: AI is changing the economics of delivery — productivity is going up, but if revenue is still tied to headcount, the gains go to the client, not the firm. Survival depends on rewriting the commercial model, not just the delivery model.",
+      "GCCs and IT services are not zero-sum. A large bank might have a GCC that owns architecture and AI strategy — and still hire TCS to implement and manage non-core systems. GCC = ownership model. IT services = access model. Both can grow.",
+      "The 30-second mental model: Labour arbitrage → Digital transformation → GCC competition → AI productivity → Revenue deflation → Outcome-based pricing → IP and platforms → Value arbitrage. That chain is the whole IT story."]
+  },
+  auto:{
+    name:"Automobile",
+    sub:"Indian auto is the world's third-largest vehicle market navigating a once-in-a-generation technology transition from ICE to EV — while managing stranded ICE assets, China supply chain dependency, and a consumer who is price-sensitive in four-wheelers but fast-adopting in two-wheelers and three-wheelers.",
+    shifts:["<strong>EV adoption is real but uneven across segments</strong> — EVs were 7.5% of total vehicle sales in FY25. Three-wheelers: 23.4% EV. Two-wheelers: 6.1% EV. Passenger cars: only 2% EV. The mass four-wheeler market has not made the switch yet — range anxiety, charging infrastructure, and price premium are the blockers.",
+      "<strong>ICE-to-EV transition destroying and creating value simultaneously</strong> — Legacy players face write-off risk on ICE R&D and tooling. New-age EV players investing billions to build platforms that may not be profitable for years. ~31% of existing roles in auto value chain directly affected by electrification.",
+      "<strong>China supply chain dependency is a structural vulnerability</strong> — Critical EV components (battery cells, semiconductors) heavily sourced from China. India investing in domestic battery manufacturing (ACC PLI scheme: Rs 18,100 crore) but indigenisation will take years.",
+      "<strong>Two-wheelers and three-wheelers leading the EV transition</strong> — Unit economics of EV work first in high-utilisation urban-use vehicles. An auto-rickshaw driver who runs 100+ km/day saves significantly on fuel. Three-wheeler EV penetration hit 23% because of rational economics, not aspiration.",
+      "<strong>Software becoming as important as hardware</strong> — Modern vehicles are increasingly software-defined. Over-the-air updates, connected features, autonomous prep — the auto company of 2030 will look more like a tech company than a manufacturing company."],
+    econ:["Revenue = volume x realisation (average selling price). Volume growing but realisation under pressure from competition",
+      "Margins are thin — typically 5-12% EBITDA for OEMs. EV margins currently worse than ICE as scale has not been achieved",
+      "Value chain: raw materials to components to OEM to dealer to financing to aftermarket. Each layer has different economics",
+      "Capital intensity is very high — new platform development, battery R&D, manufacturing capacity require billions upfront",
+      "After-sales and financing are the most profitable parts of the value chain — not the vehicle itself"],
+    tensions:[["EV transition vs. ICE cash flows","ICE generates the cash that funds EV development. Cut ICE too fast and you lose the funding engine; too slow and you get left behind"],
+      ["Volume vs. margins","India is a volume game; price competition is intense. Premium positioning is hard where Maruti holds 40%+ mass market share"],
+      ["Localisation vs. global supply chains","Government wants 70%+ local content; global supply chains (especially EV components) are more efficient but create strategic dependency"],
+      ["Legacy OEMs vs. new-age EV players","Established players have manufacturing scale and dealer networks; new players have software-first culture and EV-native design"]],
+    nuance:["The EV story in India is not one story — it is three. Two-wheelers and three-wheelers have already crossed the economics tipping point. Passenger cars are still waiting for the right price point and charging infrastructure. Commercial vehicles will be last. Any conversation about Indian EV adoption that does not distinguish between segments is imprecise.",
+      "The more interesting long-term question is not who sells the most EVs — it is who captures the software and services revenue on top of the vehicle. A car today generates data, enables subscriptions, requires OTA updates. The company that owns that relationship owns the customer for life, not just for the purchase.",
+      "Component manufacturers (auto ancillaries) are the most exposed and least discussed. An engine component maker has no role in an EV. But a company making battery management systems or power electronics has enormous upside. The auto ancillary sector is bifurcating faster than the OEM sector."]
+  },
+  realestate:{
+    name:"Real Estate",
+    sub:"Indian real estate is not a single industry — it is a collection of structurally different asset classes (residential, commercial office, logistics, data centres, retail malls) each with its own demand driver. Understanding which bucket you are talking about matters more than any generic real estate is booming narrative.",
+    shifts:["<strong>Commercial real estate being reshaped by GCCs</strong> — GCCs account for ~40% of total office demand in India, up from mid-30s in 2024. Driving record office absorption of 90+ million sq ft in 2025. Chennai office stock alone set to cross 100 million sq ft by end of 2026.",
+      "<strong>Residential has bifurcated sharply</strong> — Homes above Rs 1 crore now make up 71% of total sales (up from 59% in 2025). Demand for Rs 1.5-3 crore homes grew 67% YoY. Affordable housing (below Rs 40 lakh) is suffering — developers have almost entirely exited this segment because margins are too thin.",
+      "<strong>Logistics and warehousing quietly becoming a major asset class</strong> — Driven by e-commerce, quick commerce, and 3PL growth, industrial and warehousing leasing exceeded 27 million sq ft in H1 2025 — up 63% YoY. Dark stores, last-mile fulfilment centres, and distribution hubs all driving demand.",
+      "<strong>Alternative assets getting serious institutional attention</strong> — Data centres (driven by AI and cloud), co-living, and senior living are moving from niche to mainstream. Capital inflows into Indian real estate hit a historic $5.1 billion in Q1 2026 — up 72% YoY.",
+      "<strong>REITs have institutionalised commercial real estate</strong> — India now has multiple listed REITs (Embassy, Mindspace, Brookfield) bringing governance, transparency, and liquidity to a sector historically known for opacity."],
+    econ:["Revenue for developers = land cost + construction cost + marketing vs. realisation. Margin depends entirely on city, segment, location",
+      "Commercial real estate works on rental yield — typically 7-9% for Grade A office. Capital appreciation is secondary",
+      "Logistics assets valued on yield — shorter lease terms but strong demand gives pricing power",
+      "Biggest cost pressure: land prices in tier-1 cities at record highs; construction costs rose sharply post-pandemic",
+      "RERA forces developers to keep project funds in escrow — squeezing smaller, undercapitalised developers out of the market"],
+    tensions:[["Premium demand vs. affordable housing crisis","Market delivers what buyers with money want; failing to deliver what most Indians need. Political and social tension that will drive policy intervention"],
+      ["Office supply vs. hybrid work","GCC demand is strong but hybrid work means less space per employee. Net effect on office absorption is positive but complicated"],
+      ["Short-term capital inflows vs. long-term delivery","Real estate attracts capital easily but delivery timelines and regulatory approvals create gaps between commitment and completion"],
+      ["Transparency vs. legacy opacity","RERA and REITs improved governance, but large parts of the market (secondary transactions, smaller developers, tier-2 cities) remain poorly regulated"]],
+    nuance:["When someone says Indian real estate is booming — ask which segment. Luxury residential: yes. Affordable housing: no. Commercial office GCC-driven: very yes. Retail malls: recovering. Logistics/warehousing: structurally strong and under-discussed. Data centres: early but fast. These are six different industries sharing one label.",
+      "The GCC-real estate connection is the most important structural story not getting enough mainstream attention. Every GCC that sets up in India needs office space — and GCCs are the single largest driver of commercial real estate demand right now. Knowing this is the difference between a surface answer and a structural one.",
+      "RERA has been more transformative than any market cycle. By forcing project escrow, improving accountability, and creating a grievance mechanism, it has begun to shift real estate from a relationship business to a product business. That transition is still early — but it is irreversible."]
+  },
+  consulting:{
+    name:"Consulting",
+    sub:"Indian management consulting is growing at ~13% CAGR driven by digital transformation mandates, ESG compliance requirements, and the GCC ecosystem demanding hybrid advisory — but the industry is being disrupted by AI that can do in hours what junior consultants previously did in weeks.",
+    shifts:["<strong>Digital transformation is the largest single demand driver</strong> — Indian corporates approved $110 billion of digital initiative budgets in FY25, up 15% YoY. Cloud migration, data platform consolidation, AI implementation — all need advisory support. Technology consulting is the fastest-growing segment (15%+ CAGR).",
+      "<strong>ESG is creating a new mandatory consulting market</strong> — SEBI BRSR mandates expanding from top-150 companies to 1,000 listed firms by FY27. Companies that have never done sustainability reporting now need help. Regulatory-driven demand does not disappear in a downturn.",
+      "<strong>GCCs becoming consulting clients in a unique way</strong> — 1,580+ GCCs in India demand hybrid advisory: global strategy combined with India-based delivery and analytics. Requires both global thought leadership and local implementation capability.",
+      "<strong>AI restructuring the consulting pyramid from the bottom</strong> — Junior consultants traditionally do data gathering, benchmarking, slide preparation. AI can now do most of this faster and cheaper. Firms that adapt use AI to make senior consultants more productive. Firms that do not face margin pressure as clients ask why they should pay for work AI could do.",
+      "<strong>SMEs are a fast-growing new client segment</strong> — VC-backed startups, family businesses upgrading governance, first-generation founders seeking operational support are driving SME consulting demand at 12.8% CAGR. This segment prefers outcome-based pricing and shorter engagements."],
+    econ:["Revenue = number of consultants x utilisation rate x billing rate. Senior consultants bill 5-10x junior consultants",
+      "Operations consulting holds the largest share (~36% of market); technology consulting is fastest growing",
+      "Large enterprises account for 70%+ of revenue but SMEs are growing faster",
+      "Profitability depends heavily on utilisation — an underutilised senior consultant is very expensive dead weight",
+      "Shift to outcome-based pricing rewards firms that deliver well but punishes those with variable quality"],
+    tensions:[["AI efficiency vs. billing model","AI makes consultants more productive but if revenue is tied to hours billed, efficiency reduces revenue. Must shift to value-based pricing before competitors do"],
+      ["Generalism vs. specialisation","Large firms (Big 4, McKinsey, BCG) offer breadth; boutique specialists offer depth. Clients increasingly pay premium for genuine domain expertise over brand"],
+      ["Advice vs. implementation","Pure strategy consulting is under pressure because clients want consultants to stay for implementation, not just hand over a deck"],
+      ["Global brand vs. India context","Global firms bring frameworks and credibility; Indian boutiques bring regulatory knowledge, political context, and cultural nuance"]],
+    nuance:["The consulting industry AI problem is structurally similar to IT services AI problem. Junior headcount generates leverage for senior partners. If AI reduces the need for junior consultants, the partnership model — which depends on a pyramid of billable hours — comes under strain. The firms thinking seriously are experimenting with AI-native engagement models.",
+      "ESG consulting is the most interesting new market — not because ESG is fashionable, but because it is now mandatory for 1,000+ listed companies by FY27. Mandatory demand does not go away in a downturn. A firm that owns the ESG advisory space in India has a durable, regulatory-protected revenue stream.",
+      "The best consulting interview answer is not about which firm is biggest. It is about what problem you are solving and whether advisory alone or advisory plus implementation is the right model. Firms that can genuinely do both — think McKinsey and Accenture in the same room — are winning the largest mandates right now."]
+  }
+};
+
+function showIntel(id, btn) {
+  document.querySelectorAll('.intel-sb-btn').forEach(function(b){ b.classList.remove('on'); });
+  btn.classList.add('on');
+  renderIntel(id);
+}
+
+function renderIntel(id) {
+  var d = INTEL[id];
+  if (!d) return;
+  var h = '';
+  h += '<div class="intel-title">' + d.name + '</div>';
+  h += '<div class="intel-sub">' + d.sub + '</div>';
+  h += '<div class="intel-h">5 Structural Shifts</div><ul class="intel-ul">';
+  d.shifts.forEach(function(s){ h += '<li>' + s + '</li>'; });
+  h += '</ul>';
+  h += '<div class="intel-h">Industry Economics</div><div class="intel-econ">';
+  d.econ.forEach(function(e){ h += '<div class="intel-econ-box">' + e + '</div>'; });
+  h += '</div>';
+  h += '<div class="intel-h">Key Tensions</div><div class="intel-tensions">';
+  d.tensions.forEach(function(t){ h += '<div class="intel-t"><strong>' + t[0] + '</strong><span>' + t[1] + '</span></div>'; });
+  h += '</div>';
+  h += '<div class="intel-h">Your Nuanced View</div><div class="intel-nuance"><div class="intel-nuance-lbl">Memorise these 3</div><ul>';
+  d.nuance.forEach(function(n){ h += '<li>' + n + '</li>'; });
+  h += '</ul></div>';
+  document.getElementById('intel-main').innerHTML = h;
+}
+
 // ── INIT ──────────────────────────────────────────────────────────────────────
 renderBDDs();renderMA();renderDomain();renderSF();renderQA();renderQS();renderGD();renderStories();renderTargets();
+renderIntel('fmcg');
 </script>
 </body>
 </html>
