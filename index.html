@@ -1777,6 +1777,12 @@ function renderIntel(id) {
   var h = '';
   h += '<div class="intel-title">' + d.name + '</div>';
   h += '<div class="intel-sub">' + d.sub + '</div>';
+  var terms = TERMS[id];
+  if (terms) {
+    h += '<div class="intel-h">Key Terms</div><div class="intel-terms">';
+    terms.forEach(function(t){ h += '<div class="intel-term"><strong>' + t[0] + '</strong> — ' + t[1] + '</div>'; });
+    h += '</div>';
+  }
   h += '<div class="intel-h">5 Structural Shifts</div><ul class="intel-ul">';
   d.shifts.forEach(function(s){ h += '<li>' + s + '</li>'; });
   h += '</ul>';
