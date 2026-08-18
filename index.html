@@ -1704,6 +1704,67 @@ var INTEL = {
   }
 };
 
+
+var TERMS = {
+  fmcg:[
+    ["FMCG","Fast-Moving Consumer Goods — everyday products like food, beverages, personal care"],
+    ["Q-commerce","Quick commerce — 10-15 minute delivery via dark stores (Blinkit, Zepto, Instamart)"],
+    ["C&F","Carry and Forward agent — stores and forwards goods from manufacturer to distributor"],
+    ["D2C","Direct to Consumer — brands selling directly online without a retailer middleman"],
+    ["GT / MT","General Trade (kiranas) / Modern Trade (supermarkets, hypermarkets)"],
+    ["NPD","New Product Development"]
+  ],
+  finserv:[
+    ["NIM","Net Interest Margin — spread between what a bank earns on loans vs. pays on deposits"],
+    ["NPA / GNPA","Non-Performing Asset / Gross NPA — loans where the borrower has stopped repaying"],
+    ["UPI","Unified Payments Interface — India real-time payment rail (PhonePe, GPay, Paytm)"],
+    ["IRDAI","Insurance Regulatory and Development Authority of India"],
+    ["NBFC","Non-Banking Financial Company — lends like a bank but cannot accept deposits (Bajaj Finance)"],
+    ["BC","Business Correspondent — agent providing banking services in areas without bank branches"]
+  ],
+  consumertech:[
+    ["CAC","Customer Acquisition Cost — how much it costs to acquire one new paying user"],
+    ["LTV","Lifetime Value — total revenue a platform expects from a user over their lifetime"],
+    ["AOV","Average Order Value — average amount spent per order"],
+    ["GOV","Gross Order Value — total value of orders placed on the platform"],
+    ["EBITDA","Earnings Before Interest Tax Depreciation Amortisation — operating profitability measure"],
+    ["DAU / MAU","Daily / Monthly Active Users"],
+    ["Dark store","Small warehouse (500-700 sq ft) fulfilling quick commerce orders within 2 km radius"]
+  ],
+  it:[
+    ["GCC","Global Capability Centre — a company's own India office doing strategic tech work (not outsourced to TCS/Infosys)"],
+    ["FTE","Full-Time Equivalent — billing unit; 1 FTE = 1 person working full time"],
+    ["IP","Intellectual Property — proprietary software, algorithms, or platforms owned by the company"],
+    ["AMS","Application Management Services — ongoing maintenance and support of software systems"],
+    ["Outcome-based pricing","Billing based on results (cost saved, revenue generated) rather than hours worked"],
+    ["Mid-tier IT","Companies like Mphasis, Persistent, Coforge — smaller than TCS/Infosys but growing faster"]
+  ],
+  auto:[
+    ["ICE","Internal Combustion Engine — traditional petrol/diesel vehicles"],
+    ["EV","Electric Vehicle"],
+    ["OEM","Original Equipment Manufacturer — the vehicle maker (Maruti, Tata Motors, Hyundai)"],
+    ["PLI","Production Linked Incentive — government pays manufacturers based on incremental production"],
+    ["ACC","Advanced Chemistry Cell — battery technology for EVs. India has Rs 18,100 crore PLI for this"],
+    ["OTA","Over-the-Air update — software updates pushed to vehicles remotely, like a phone update"]
+  ],
+  realestate:[
+    ["GCC","Global Capability Centre — now ~40% of India commercial office demand"],
+    ["RERA","Real Estate Regulatory Authority — requires developers to keep project funds in escrow"],
+    ["REIT","Real Estate Investment Trust — listed vehicle to invest in commercial real estate (Embassy, Mindspace)"],
+    ["Grade A","Premium quality office space where MNCs and GCCs typically operate"],
+    ["3PL","Third-Party Logistics — major driver of warehousing and logistics real estate demand"],
+    ["sq ft","Square feet — standard unit for real estate measurement in India"]
+  ],
+  consulting:[
+    ["Big 4","Deloitte, PwC, EY, KPMG — the four largest global accounting and consulting firms"],
+    ["ESG","Environmental Social and Governance — sustainability and ethics criteria for businesses"],
+    ["BRSR","Business Responsibility and Sustainability Reporting — SEBI mandatory ESG disclosure"],
+    ["GCC","Global Capability Centre — becoming a major consulting client in India for hybrid advisory"],
+    ["SME","Small and Medium Enterprise — fast-growing new client segment for consulting firms"],
+    ["Outcome-based pricing","Billing based on results delivered rather than hours worked"]
+  ]
+};
+
 function showIntel(id, btn) {
   document.querySelectorAll('.intel-sb-btn').forEach(function(b){ b.classList.remove('on'); });
   btn.classList.add('on');
