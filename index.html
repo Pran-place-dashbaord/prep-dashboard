@@ -343,6 +343,94 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--te
   .ma-s.win,.ma-s.mid{border-right:none;border-bottom:1px solid var(--border)}
   .ctbl{font-size:11px}
 }
+
+/* SIB APTITUDE PREP TAB */
+.sib-intro{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:10px;padding:12px 15px;margin-bottom:14px;font-size:12px;color:var(--navy);line-height:1.6}
+.sib-intro strong{color:var(--navy)}
+.sib-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.sib-card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.sib-card-head{background:var(--navy);padding:13px 16px}
+.sib-card-title{color:#fff;font-size:15px;font-weight:700}
+.sib-card-sub{color:#93C5FD;font-size:11px;margin-top:2px}
+.sib-card-body{padding:14px 16px}
+.sib-meta-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+.sib-meta-box{background:var(--light);border:1px solid var(--border);border-radius:8px;padding:9px 6px;text-align:center}
+.sib-meta-val{font-size:17px;font-weight:700;color:var(--navy)}
+.sib-meta-lbl{font-size:10px;color:var(--muted);margin-top:2px}
+.sib-sec-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.sib-sec-tag{font-size:10px;padding:3px 9px;border-radius:12px;background:#FEF3C7;color:#92400E;font-weight:600}
+.sib-start-btn{width:100%;background:var(--teal);color:#fff;border:none;padding:11px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;transition:opacity .2s}
+.sib-start-btn:hover{opacity:.88}
+
+/* QUIZ UI */
+.sib-quiz-layout{display:grid;grid-template-columns:1fr 260px;gap:14px}
+.sib-topbar{display:flex;align-items:center;justify-content:space-between;background:var(--navy);color:#fff;border-radius:10px;padding:10px 15px;margin-bottom:12px}
+.sib-topbar-title{font-size:13px;font-weight:700}
+.sib-timer-wrap{display:flex;align-items:center;gap:7px}
+.sib-timer-lbl{font-size:11px;color:#93C5FD}
+#sib-timer{font-size:16px;font-weight:700;font-variant-numeric:tabular-nums;background:rgba(255,255,255,.12);padding:3px 10px;border-radius:6px}
+#sib-timer.sib-timer-warn{background:#991B1B;color:#fff}
+.sib-qpanel-wrap{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px}
+.sib-qmeta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.sib-qsec{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--teal);background:#EFF6FF;padding:3px 9px;border-radius:10px}
+.sib-qcount{font-size:11px;color:var(--muted)}
+.sib-qtext{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:14px;font-weight:500}
+.sib-options{display:flex;flex-direction:column;gap:8px}
+.sib-opt{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;cursor:pointer;transition:all .15s}
+.sib-opt:hover{border-color:var(--teal);background:#F8FAFC}
+.sib-opt.selected{border-color:var(--teal);background:#EFF6FF}
+.sib-opt-letter{width:22px;height:22px;border-radius:50%;background:var(--light);border:1px solid var(--border);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--navy)}
+.sib-opt.selected .sib-opt-letter{background:var(--teal);color:#fff;border-color:var(--teal)}
+.sib-opt-text{font-size:13px;color:var(--text);line-height:1.5;padding-top:2px}
+.sib-navbtns{display:flex;justify-content:space-between;margin-top:16px;gap:10px}
+.sib-nav-btn{background:#fff;border:1px solid var(--border);padding:9px 16px;border-radius:8px;font-size:12px;font-weight:600;color:var(--text);cursor:pointer}
+.sib-nav-btn.primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+.sib-nav-btn:disabled{opacity:.4;cursor:not-allowed}
+.sib-submit-btn{background:var(--red);color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer}
+.sib-sidebar{background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px;align-self:start}
+.sib-progress-txt{font-size:11px;color:var(--muted);margin-bottom:10px;font-weight:600}
+.sib-pal-secname{font-size:10px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.04em;margin:9px 0 5px;grid-column:1/-1}
+#sib-palette{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.sib-pal-btn{width:100%;aspect-ratio:1;border-radius:6px;border:1px solid var(--border);background:var(--light);font-size:11px;font-weight:600;color:var(--text);cursor:pointer}
+.sib-pal-btn.answered{background:#DCFCE7;border-color:#86EFAC;color:#166534}
+.sib-pal-btn.current{outline:2px solid var(--navy);outline-offset:1px}
+
+/* RESULTS */
+.sib-score-card{background:var(--navy);border-radius:12px;padding:20px;text-align:center;color:#fff;margin-bottom:14px}
+.sib-score-big{font-size:32px;font-weight:800}
+.sib-score-pct{font-size:12px;color:#93C5FD;margin-top:6px}
+.sib-sectionscores{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-bottom:18px}
+.sib-secscore-box{background:#fff;border:1px solid var(--border);border-radius:10px;padding:11px 13px}
+.sib-secscore-name{font-size:11px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.sib-secscore-val{font-size:15px;font-weight:700;color:var(--teal);margin-bottom:6px}
+.sib-secscore-bar{height:5px;background:var(--light);border-radius:3px;overflow:hidden}
+.sib-secscore-fill{height:100%;background:var(--teal)}
+.sib-review-head{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--teal)}
+.sib-review-list{display:flex;flex-direction:column;gap:10px}
+.sib-review-item{border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+.sib-review-item.correct{border-left:4px solid var(--green)}
+.sib-review-item.incorrect{border-left:4px solid var(--red)}
+.sib-review-item.unanswered{border-left:4px solid var(--muted)}
+.sib-review-qhead{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.sib-review-num{font-size:11px;font-weight:700;color:var(--navy)}
+.sib-review-sec{font-size:10px;color:var(--muted);background:var(--light);padding:2px 8px;border-radius:10px}
+.sib-review-status{font-size:10px;font-weight:700;margin-left:auto;padding:2px 8px;border-radius:10px}
+.sib-review-item.correct .sib-review-status{background:#DCFCE7;color:#166534}
+.sib-review-item.incorrect .sib-review-status{background:#FEE2E2;color:#991B1B}
+.sib-review-item.unanswered .sib-review-status{background:var(--light);color:var(--muted)}
+.sib-review-qtext{font-size:13px;color:var(--text);line-height:1.55;margin-bottom:8px;font-weight:500}
+.sib-review-opt{font-size:12px;color:var(--muted);padding:4px 8px;border-radius:5px;margin-bottom:3px}
+.sib-review-opt.right-answer{background:#DCFCE7;color:#166534;font-weight:600}
+.sib-review-opt.wrong-answer{background:#FEE2E2;color:#991B1B;font-weight:600}
+.sib-review-exp{font-size:12px;color:var(--text);background:var(--light);border-radius:6px;padding:8px 10px;margin-top:8px;line-height:1.55}
+
+@media(max-width:760px){
+  .sib-quiz-layout{grid-template-columns:1fr}
+  .sib-sidebar{order:-1}
+  #sib-palette{grid-template-columns:repeat(10,1fr)}
+  .sib-meta-row{grid-template-columns:repeat(2,1fr)}
+}
+
 </style>
 
 <script>
@@ -386,6 +474,7 @@ document.addEventListener('click', function(e) {
   <div class="main-tab t-green" onclick="switchTab('stories',this)">📖 My Stories</div>
   <div class="main-tab t-navy2" onclick="switchTab('targets',this)">🏆 Company Targets</div>
   <div class="main-tab" onclick="switchTab('news',this)" style="color:#0E7490">📰 Stay Current</div>
+  <div class="main-tab" onclick="switchTab('sib',this)" style="color:#991B1B">📝 SIB Aptitude Prep</div>
 </div>
 
 <!-- TAB 1: BDD -->
@@ -665,6 +754,36 @@ document.addEventListener('click', function(e) {
         <button class="news-link" onclick="(window.top||window).open('https://news.google.com/search?q=site:businesstoday.in+marketing+brands+FMCG&hl=en-IN','_blank')">Open Business Today — Marketing &#x2192;</button>
       </div>
     </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TAB 10: SIB APTITUDE PREP -->
+<div id="tab-sib" class="tab-content">
+  <div class="content">
+    <div class="sib-intro"><strong>South Indian Bank — Online Aptitude Test.</strong> Per your admit card: 60 questions across 5 sections, 60 minutes total, +1 for each correct answer, <strong>no negative marking</strong> — so attempt every question. This exact 5-section split (Quant, Logical Reasoning, English, Banking &amp; GK, Data Interpretation) is our best-guess structure since SIB hasn't published a past paper for this specific campus test — confirm with TAPMI placement cell / seniors if you get the real breakdown.</div>
+
+    <div id="sib-list-wrap">
+      <div class="sib-grid" id="sib-list"></div>
+    </div>
+
+    <div id="sib-quiz-wrap" style="display:none">
+      <div class="sib-topbar">
+        <div class="sib-topbar-title">South Indian Bank — Practice Test</div>
+        <div class="sib-timer-wrap"><span class="sib-timer-lbl">Time Left</span><span id="sib-timer">60:00</span></div>
+      </div>
+      <div class="sib-quiz-layout">
+        <div class="sib-qpanel-wrap"><div id="sib-qpanel"></div></div>
+        <div class="sib-sidebar">
+          <div class="sib-progress-txt" id="sib-progress-txt">0 of 60 answered</div>
+          <div id="sib-palette"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="sib-results-wrap" style="display:none">
+      <div id="sib-results"></div>
     </div>
 
   </div>
@@ -1118,6 +1237,286 @@ const FAILURE_STORIES=[
   {brand:'Snapdeal / Freecharge',action:'Acquisition',summary:'Snapdeal paid Rs 2,400 crore for Freecharge in 2015. Sold it 2 years later for Rs 385 crore — recovering barely 16% of what it paid. Overpayment, poor integration, no coherent strategy.',lesson:'Acquisition value is created in integration, not in the deal. Two products with different user journeys, tech stacks, and cultures rarely combine well under pressure.'},
   {brand:'IKEA India',action:'Market Development',summary:'Announced entry 2006, opened first store 2018 — 12 years later. Underestimated smaller Indian homes, preference not to self-assemble, and the out-of-town store format clashing with Indian shopping habits.',lesson:'Market development fails when you transplant your existing model unchanged. Adapting to local consumer behaviour is not optional — it\'s the job.'}
 ];
+
+const SIB_PAPERS=[
+  {id:'p1',title:'Practice Paper 1',sections:[
+    {name:'Quantitative Aptitude',qs:[
+      {q:'A shopkeeper marks goods 40% above cost price and gives a discount of 15% on the marked price. Find his profit percentage.',o:['9%','14%','19%','24%'],c:2,e:'Let CP = 100. MP = 140. SP = 140 x 0.85 = 119. Profit = 19%.'},
+      {q:'The simple interest on a sum for 2 years at 8% p.a. is Rs 1,600. Find the sum.',o:['Rs 8,000','Rs 9,000','Rs 10,000','Rs 12,000'],c:2,e:'SI = PRT/100. 1600 = P x 8 x 2 / 100, so P = 1600 x 100 / 16 = Rs 10,000.'},
+      {q:'A can finish a work in 12 days and B in 18 days. Working together, in how many days will they finish it?',o:['6 days','7.2 days','8 days','9 days'],c:1,e:'LCM of 12 and 18 = 36 units. A\'s rate = 3/day, B\'s rate = 2/day. Together = 5/day. Time = 36/5 = 7.2 days.'},
+      {q:'The average of 5 consecutive odd numbers is 61. Find the largest of these numbers.',o:['61','63','65','67'],c:2,e:'For 5 consecutive odd numbers, the average equals the middle number. So the numbers are 57, 59, 61, 63, 65. Largest = 65.'},
+      {q:'A train 150 m long crosses a pole in 15 seconds. Find its speed in km/h.',o:['27 km/h','32 km/h','36 km/h','40 km/h'],c:2,e:'Speed = 150/15 = 10 m/s = 10 x 18/5 = 36 km/h.'},
+      {q:'In how many years will Rs 8,000 amount to Rs 9,261 at 5% p.a. compounded annually?',o:['2 years','3 years','4 years','5 years'],c:1,e:'9261/8000 = 1.157625 = (1.05)^3. So the time period is 3 years.'},
+      {q:'Two numbers are in the ratio 3:5. If 10 is added to each, the new ratio becomes 5:7. Find the two numbers.',o:['12 and 20','15 and 25','18 and 30','21 and 35'],c:1,e:'Let numbers be 3x and 5x. (3x+10)/(5x+10) = 5/7. Solving: 21x+70 = 25x+50, so x=5. Numbers = 15 and 25.'},
+      {q:'A mixture of 20 litres contains milk and water in the ratio 3:1 (25% water). How many litres of water must be added to make water 40% of the new mixture?',o:['3 litres','4 litres','5 litres','6 litres'],c:2,e:'Milk = 15 L, water = 5 L. Let x litres of water be added: (5+x)/(20+x) = 0.40. Solving: 5+x = 8+0.4x, 0.6x = 3, x = 5 litres.'},
+      {q:'The cost price of 20 articles equals the selling price of 16 articles. Find the profit percentage.',o:['15%','20%','25%','30%'],c:2,e:'20 CP = 16 SP, so SP = 1.25 CP. Profit percentage = 25%.'},
+      {q:'A sum of money doubles itself in 8 years on simple interest. Find the rate of interest per annum.',o:['10%','12.5%','15%','16.5%'],c:1,e:'If the sum doubles, SI = P over 8 years. R = 100 x SI / (P x T) = 100 x P / (P x 8) = 12.5%.'},
+      {q:'The perimeter of a rectangle is 60 cm and its length is twice its breadth. Find its area.',o:['150 cm²','180 cm²','200 cm²','220 cm²'],c:2,e:'2(l+b)=60, so l+b=30. Since l=2b, 3b=30, b=10, l=20. Area = 20 x 10 = 200 cm².'},
+      {q:'A boat travels 30 km downstream in 2 hours and returns the same distance upstream in 3 hours. Find the speed of the boat in still water.',o:['10 km/h','11 km/h','12.5 km/h','15 km/h'],c:2,e:'Downstream speed = 30/2 = 15 km/h. Upstream speed = 30/3 = 10 km/h. Boat speed in still water = (15+10)/2 = 12.5 km/h.'},
+    ]},
+    {name:'Logical Reasoning',qs:[
+      {q:'Find the next number in the series: 2, 6, 12, 20, 30, ?',o:['36','38','40','42'],c:3,e:'The differences are 4, 6, 8, 10, 12. Next term = 30 + 12 = 42.'},
+      {q:'In a certain code, \'BOOK\' is written as \'CPPL\'. How will \'PAGE\' be written in that code?',o:['QBHF','QBHE','OBGF','QAHF'],c:0,e:'Each letter is shifted forward by one place in the alphabet: P→Q, A→B, G→H, E→F. So PAGE becomes QBHF.'},
+      {q:'Pointing to a photograph, a man says, \'She is the daughter of my grandfather\'s only son.\' How is the woman related to the man?',o:['Mother','Sister','Cousin','Aunt'],c:1,e:'My grandfather\'s only son is the man\'s father (assuming the man himself is not the \'only son\' being referred to, since the subject is female). The daughter of the man\'s father is his sister.'},
+      {q:'Ravi walks 5 km north, then turns right and walks 3 km, then turns right again and walks 5 km. How far is he from his starting point?',o:['2 km','3 km','5 km','8 km'],c:1,e:'North 5 km, then east 3 km, then south 5 km. The two north-south legs cancel out, leaving only the 3 km eastward displacement.'},
+      {q:'Statement: All pens are books. Some books are tables. Conclusions: I. Some tables are pens. II. Some books are pens.',o:['Only I follows','Only II follows','Both follow','Neither follows'],c:1,e:'Since all pens are books, it follows that some books are pens (II). Conclusion I does not necessarily follow from the given statements.'},
+      {q:'Choose the odd one out.',o:['Copper','Iron','Aluminium','Mercury'],c:3,e:'Copper, iron, and aluminium are solid metals at room temperature. Mercury is the odd one out because it is liquid at room temperature.'},
+      {q:'Find the missing letter in the series: A, C, F, J, O, ?',o:['S','T','U','V'],c:2,e:'The gaps increase by one each time: +2, +3, +4, +5, +6. A(1)→C(3)→F(6)→J(10)→O(15)→U(21).'},
+      {q:'Doctor is to Hospital as Teacher is to?',o:['Student','Classroom','School','Book'],c:2,e:'A doctor\'s primary workplace is a hospital; a teacher\'s primary workplace is a school. The analogy is about place of work.'},
+      {q:'Statement: \'Candidates must arrive at least 15 minutes before the test begins.\' Which assumption is implicit?',o:['Late arrivals may not be permitted to enter','Candidates need time to settle in before the test','Both of the above','None of the above'],c:2,e:'The instruction implies both that late entry may be restricted and that some settling-in time is needed before the test starts.'},
+      {q:'Five friends A, B, C, D and E sit in a row. B is immediately to the right of A. D is immediately to the left of E. C sits between B and D. Who is in the middle?',o:['A','B','C','D'],c:2,e:'The only arrangement satisfying all conditions is A, B, C, D, E. The middle (3rd) position is occupied by C.'},
+      {q:'Five years ago, a father\'s age was 3 times his son\'s age. Five years from now, the father\'s age will be twice his son\'s age. Find the father\'s present age.',o:['30 years','35 years','40 years','45 years'],c:1,e:'Let son\'s age 5 years ago = x, father\'s = 3x. In 10 years\' time: father = 3x+10, son = x+10. Set 3x+10 = 2(x+10) → x=10. Father\'s present age = 3x+5 = 35 years.'},
+      {q:'Find the missing number: 8, 27, 64, 125, ?',o:['196','200','216','225'],c:2,e:'The series is cubes of consecutive integers: 2³, 3³, 4³, 5³, 6³. 6³ = 216.'},
+    ]},
+    {name:'English / Verbal Ability',qs:[
+      {q:'Choose the synonym of \'Meticulous\'.',o:['Careless','Painstaking','Hasty','Vague'],c:1,e:'\'Meticulous\' means showing great attention to detail, i.e. painstaking.'},
+      {q:'Choose the antonym of \'Abundant\'.',o:['Plentiful','Scarce','Ample','Rich'],c:1,e:'\'Abundant\' means present in large quantity. Its opposite is \'scarce\'.'},
+      {q:'Fill in the blank: Despite his hard work, he ___ to achieve the target.',o:['failed','fails','failing','fail'],c:0,e:'The sentence is in simple past tense (\'Despite his hard work\'), so the correct form is \'failed\'.'},
+      {q:'Identify the error: \'Neither of the two candidates were selected for the post.\'',o:['\'Neither\' is used incorrectly','\'were\' should be \'was\'','\'candidates\' should be \'candidate\'','No error'],c:1,e:'\'Neither\' is a singular subject, so it takes a singular verb: \'was selected\', not \'were selected\'.'},
+      {q:'A person who can speak two languages is called:',o:['Linguist','Bilingual','Polyglot','Translator'],c:1,e:'\'Bilingual\' specifically means able to speak two languages. \'Polyglot\' refers to someone who knows several languages.'},
+      {q:'What does the idiom \'to bell the cat\' mean?',o:['To take on a risky task on behalf of a group','To praise someone excessively','To avoid responsibility','To celebrate a victory'],c:0,e:'\'To bell the cat\' means to undertake a difficult or dangerous task for the benefit of others.'},
+      {q:'Correct the sentence: \'She don\'t like to attend meetings on Mondays.\'',o:['She don\'t likes to attend meetings on Mondays.','She doesn\'t like to attend meetings on Mondays.','She not like to attend meetings on Mondays.','She isn\'t like to attend meetings on Mondays.'],c:1,e:'With a third-person singular subject (\'She\'), the correct auxiliary is \'doesn\'t\', not \'don\'t\'.'},
+      {q:'Read the statement: \'Banks earn their primary income from the difference between the interest they charge on loans and the interest they pay on deposits, known as the net interest margin.\' What is the \'net interest margin\'?',o:['The bank\'s total deposits','The difference between interest earned on loans and interest paid on deposits','The bank\'s operating expenses','The government\'s lending rate'],c:1,e:'The passage directly defines net interest margin as this difference between interest income and interest expense.'},
+      {q:'\'Frugal\' is to \'Spendthrift\' as \'Timid\' is to?',o:['Shy','Bold','Careful','Quiet'],c:1,e:'\'Frugal\' and \'Spendthrift\' are antonyms; similarly, the antonym of \'Timid\' is \'Bold\'.'},
+      {q:'Choose the correctly spelled word.',o:['Occassion','Ocassion','Occasion','Occasoin'],c:2,e:'The correct spelling is \'Occasion\' — with a double \'c\' and a single \'s\'.'},
+      {q:'Fill in the blank with the correct preposition: The manager is responsible ___ the entire branch\'s performance.',o:['for','of','with','to'],c:0,e:'\'Responsible for\' is the correct preposition pairing to indicate accountability.'},
+      {q:'Fill in the blank: Although the market was volatile, the fund manager remained confident, arguing that short-term volatility ___ long-term investment fundamentals.',o:['improves','does not change','eliminates','creates'],c:1,e:'The sentence contrasts short-term volatility with long-term fundamentals; the manager\'s confidence implies volatility \'does not change\' the underlying fundamentals.'},
+    ]},
+    {name:'Banking & General Awareness',qs:[
+      {q:'The \'Repo Rate\' is best described as:',o:['The rate at which RBI borrows money from commercial banks','The rate at which RBI lends money to commercial banks against government securities','The exchange rate set by RBI','The rate charged on gold loans'],c:1,e:'Repo Rate is the rate at which the RBI lends short-term funds to commercial banks against eligible collateral, typically government securities.'},
+      {q:'CRR stands for:',o:['Cash Reserve Ratio','Credit Rating Ratio','Capital Reserve Rate','Currency Reserve Ratio'],c:0,e:'CRR (Cash Reserve Ratio) is the minimum percentage of a bank\'s total deposits that it must maintain as cash reserves with the RBI.'},
+      {q:'Which body regulates commercial banks in India?',o:['SEBI','IRDAI','Reserve Bank of India','Ministry of Finance'],c:2,e:'The Reserve Bank of India (RBI) is the primary regulator of commercial banks in India.'},
+      {q:'NPA in banking terminology stands for:',o:['Non-Performing Asset','Net Profit Account','National Pension Account','Non-Payment Agreement'],c:0,e:'An NPA (Non-Performing Asset) is a loan or advance where the borrower has stopped making interest or principal repayments for a specified period.'},
+      {q:'What does \'KYC\' stand for in the banking context?',o:['Know Your Customer','Keep Your Cash','Know Your Credit','Key Yield Calculation'],c:0,e:'KYC (Know Your Customer) refers to the process banks use to verify the identity of their clients before opening accounts or offering services.'},
+      {q:'Which committee\'s recommendations led to major banking sector reforms in India starting in 1991?',o:['Narasimham Committee','Chakravarty Committee','Rangarajan Committee','Tarapore Committee'],c:0,e:'The Narasimham Committee (1991) recommended sweeping reforms including prudential norms, reduced statutory pre-emptions, and greater competition in Indian banking.'},
+      {q:'What is the standard minimum age to independently open a savings bank account in India (without a guardian)?',o:['15 years','18 years','21 years','16 years'],c:1,e:'In India, an individual can independently open and operate a savings bank account once they turn 18 years old.'},
+      {q:'South Indian Bank is headquartered in which city?',o:['Kochi','Thiruvananthapuram','Thrissur','Kozhikode'],c:2,e:'South Indian Bank Ltd. is headquartered in Thrissur, Kerala.'},
+      {q:'NEFT, a common electronic payment system in India, stands for:',o:['National Electronic Funds Transfer','New Electronic Fund Transaction','National Exchange Fund Transfer','Net Electronic Fast Transfer'],c:0,e:'NEFT stands for National Electronic Funds Transfer, a nation-wide system for one-to-one electronic funds transfer.'},
+      {q:'The IFSC code used to identify bank branches in India stands for:',o:['Indian Financial System Code','International Fund Settlement Code','Indian Fund Security Code','Interbank Financial Standard Code'],c:0,e:'IFSC (Indian Financial System Code) is an alphanumeric code that uniquely identifies a bank branch for electronic payment systems like NEFT and RTGS.'},
+      {q:'Which of the following is NOT a typical function of a commercial bank?',o:['Accepting deposits','Granting loans','Printing currency notes','Facilitating payments'],c:2,e:'Printing/issuing currency notes is the function of the central bank (RBI in India), not commercial banks.'},
+      {q:'A \'Green Channel Counter\' in a bank branch generally refers to a facility that allows customers to:',o:['Withdraw foreign currency','Transact without filling paper slips, using a passbook/card','Apply for eco-friendly loans','Deposit only environment-related funds'],c:1,e:'A Green Channel Counter typically enables paperless, quick transactions using a debit card or passbook rather than filling withdrawal/deposit slips.'},
+    ]},
+    {name:'Data Interpretation',qs:[
+      {q:'A company\'s sales (Rs lakh) over 5 years: 2021: 120, 2022: 150, 2023: 135, 2024: 180, 2025: 210. What is the percentage increase in sales from 2021 to 2025?',o:['55%','65%','75%','85%'],c:2,e:'Increase = 210-120 = 90. Percentage increase = 90/120 x 100 = 75%.'},
+      {q:'Using the same sales data (2021: 120, 2022: 150, 2023: 135, 2024: 180, 2025: 210), in which year did sales decline compared to the previous year?',o:['2022','2023','2024','2025'],c:1,e:'Sales fell from 150 (2022) to 135 (2023) — a decline. All other years show an increase over the previous year.'},
+      {q:'Using the same sales data, what is the average annual sales over the 5 years?',o:['Rs 149 lakh','Rs 155 lakh','Rs 159 lakh','Rs 165 lakh'],c:2,e:'Sum = 120+150+135+180+210 = 795. Average = 795/5 = Rs 159 lakh.'},
+      {q:'Using the same sales data, what is the percentage decline in sales from 2022 to 2023?',o:['8%','10%','12%','15%'],c:1,e:'Decline = 150-135 = 15. Percentage decline = 15/150 x 100 = 10%.'},
+      {q:'Using the same sales data, if the 2026 target is a 20% increase over 2025 sales, what is the target sales figure?',o:['Rs 242 lakh','Rs 248 lakh','Rs 252 lakh','Rs 260 lakh'],c:2,e:'Target = 210 x 1.20 = Rs 252 lakh.'},
+      {q:'Four students scored marks (out of 100) in Quant, Reasoning, and English respectively: A: 70,80,60; B: 85,75,90; C: 60,65,70; D: 90,85,95. Who scored the highest total marks?',o:['A','B','C','D'],c:3,e:'Totals: A=210, B=250, C=195, D=270. D has the highest total marks (270).'},
+      {q:'Using the same student data, what is the average marks scored by student B across the three subjects?',o:['78.3','80.0','83.3','85.0'],c:2,e:'B\'s total = 85+75+90 = 250. Average = 250/3 = 83.3 (approx).'},
+      {q:'Using the same student data, what is the overall average score percentage across all 4 students and all 3 subjects combined?',o:['70.4%','72.9%','77.1%','80.2%'],c:2,e:'Total marks scored = 210+250+195+270 = 925. Maximum possible = 4 x 3 x 100 = 1200. Percentage = 925/1200 x 100 = 77.1% (approx).'},
+      {q:'Using the same student data, what is the difference between the highest total scorer and the lowest total scorer?',o:['55','65','75','85'],c:2,e:'Highest = D (270), Lowest = C (195). Difference = 270-195 = 75.'},
+      {q:'Using the same student data, which subject has the highest combined score across all 4 students?',o:['Quant','Reasoning','English','All are equal'],c:2,e:'Quant total = 70+85+60+90=305. Reasoning total = 80+75+65+85=305. English total = 60+90+70+95=315. English has the highest combined score.'},
+      {q:'A company\'s annual expenditure of Rs 50 lakh is distributed as: Salaries 40%, Rent 15%, Marketing 20%, R&D 15%, Others 10%. How much is spent on Marketing?',o:['Rs 7.5 lakh','Rs 8 lakh','Rs 10 lakh','Rs 12.5 lakh'],c:2,e:'Marketing spend = 50 x 0.20 = Rs 10 lakh.'},
+      {q:'Using the same expenditure data (Salaries 40%, Rent 15%, Marketing 20%, R&D 15%, Others 10%, total Rs 50 lakh), how much more is spent on Salaries than on R&D?',o:['Rs 10 lakh','Rs 11 lakh','Rs 12.5 lakh','Rs 15 lakh'],c:2,e:'Salaries = 50 x 0.40 = Rs 20 lakh. R&D = 50 x 0.15 = Rs 7.5 lakh. Difference = 20 - 7.5 = Rs 12.5 lakh.'},
+    ]},
+  ]}
+];
+
+// ── SIB APTITUDE PREP ENGINE ────────────────────────────────────────────────
+let sibState={paper:null,flat:[],qIndex:0,answers:{},timeLeft:3600,timerId:null,submitted:false};
+
+function sibFlatten(paper){
+  var flat=[];
+  paper.sections.forEach(function(sec){
+    sec.qs.forEach(function(item){
+      flat.push({section:sec.name,q:item.q,o:item.o,c:item.c,e:item.e});
+    });
+  });
+  return flat;
+}
+
+function renderSIBList(){
+  var h='';
+  SIB_PAPERS.forEach(function(p){
+    var qCount=0;
+    p.sections.forEach(function(s){ qCount+=s.qs.length; });
+    h+='<div class="sib-card">';
+    h+='<div class="sib-card-head"><div class="sib-card-title">'+p.title+'</div><div class="sib-card-sub">South Indian Bank — Online Aptitude Test format</div></div>';
+    h+='<div class="sib-card-body">';
+    h+='<div class="sib-meta-row">';
+    h+='<div class="sib-meta-box"><div class="sib-meta-val">'+qCount+'</div><div class="sib-meta-lbl">Questions</div></div>';
+    h+='<div class="sib-meta-box"><div class="sib-meta-val">60</div><div class="sib-meta-lbl">Minutes</div></div>';
+    h+='<div class="sib-meta-box"><div class="sib-meta-val">'+p.sections.length+'</div><div class="sib-meta-lbl">Sections</div></div>';
+    h+='<div class="sib-meta-box"><div class="sib-meta-val">0</div><div class="sib-meta-lbl">Negative Mark</div></div>';
+    h+='</div>';
+    h+='<div class="sib-sec-tags">';
+    p.sections.forEach(function(s){ h+='<span class="sib-sec-tag">'+s.name+'</span>'; });
+    h+='</div>';
+    h+='<button class="sib-start-btn" onclick="startSIBPaper(\''+p.id+'\')">Start Test</button>';
+    h+='</div></div>';
+  });
+  document.getElementById('sib-list').innerHTML=h;
+}
+
+function startSIBPaper(id){
+  var paper=null;
+  SIB_PAPERS.forEach(function(p){ if(p.id===id) paper=p; });
+  if(!paper) return;
+  sibState={paper:paper,flat:sibFlatten(paper),qIndex:0,answers:{},timeLeft:3600,timerId:null,submitted:false};
+  document.getElementById('sib-list-wrap').style.display='none';
+  document.getElementById('sib-results-wrap').style.display='none';
+  document.getElementById('sib-quiz-wrap').style.display='block';
+  renderSIBQuestion();
+  renderSIBPalette();
+  if(sibState.timerId) clearInterval(sibState.timerId);
+  sibState.timerId=setInterval(sibTick,1000);
+  sibUpdateTimerDisplay();
+}
+
+function sibTick(){
+  sibState.timeLeft--;
+  sibUpdateTimerDisplay();
+  if(sibState.timeLeft<=0){
+    clearInterval(sibState.timerId);
+    submitSIBPaper();
+  }
+}
+
+function sibUpdateTimerDisplay(){
+  var t=Math.max(0,sibState.timeLeft);
+  var m=Math.floor(t/60);
+  var s=t%60;
+  var el=document.getElementById('sib-timer');
+  if(el) el.textContent=(m<10?'0':'')+m+':'+(s<10?'0':'')+s;
+  if(el && t<=300) el.classList.add('sib-timer-warn'); 
+}
+
+function renderSIBQuestion(){
+  var item=sibState.flat[sibState.qIndex];
+  var h='';
+  h+='<div class="sib-qmeta"><span class="sib-qsec">'+item.section+'</span><span class="sib-qcount">Question '+(sibState.qIndex+1)+' of '+sibState.flat.length+'</span></div>';
+  h+='<div class="sib-qtext">'+item.q+'</div>';
+  h+='<div class="sib-options">';
+  item.o.forEach(function(opt,idx){
+    var sel=sibState.answers[sibState.qIndex]===idx;
+    h+='<div class="sib-opt'+(sel?' selected':'')+'" onclick="selectSIBAnswer('+idx+')">';
+    h+='<span class="sib-opt-letter">'+String.fromCharCode(65+idx)+'</span>';
+    h+='<span class="sib-opt-text">'+opt+'</span>';
+    h+='</div>';
+  });
+  h+='</div>';
+  h+='<div class="sib-navbtns">';
+  h+='<button class="sib-nav-btn" '+(sibState.qIndex===0?'disabled':'')+' onclick="sibNav(-1)">&#8592; Previous</button>';
+  if(sibState.qIndex===sibState.flat.length-1){
+    h+='<button class="sib-submit-btn" onclick="confirmSubmitSIB()">Submit Test</button>';
+  } else {
+    h+='<button class="sib-nav-btn primary" onclick="sibNav(1)">Next &#8594;</button>';
+  }
+  h+='</div>';
+  document.getElementById('sib-qpanel').innerHTML=h;
+}
+
+function selectSIBAnswer(idx){
+  sibState.answers[sibState.qIndex]=idx;
+  renderSIBQuestion();
+  renderSIBPalette();
+}
+
+function sibNav(dir){
+  var ni=sibState.qIndex+dir;
+  if(ni<0||ni>=sibState.flat.length) return;
+  sibState.qIndex=ni;
+  renderSIBQuestion();
+  renderSIBPalette();
+}
+
+function sibJumpTo(idx){
+  sibState.qIndex=idx;
+  renderSIBQuestion();
+  renderSIBPalette();
+}
+
+function renderSIBPalette(){
+  var h='';
+  var lastSec='';
+  sibState.flat.forEach(function(item,idx){
+    if(item.section!==lastSec){
+      h+='<div class="sib-pal-secname">'+item.section+'</div>';
+      lastSec=item.section;
+    }
+    var answered=sibState.answers[idx]!==undefined;
+    var current=idx===sibState.qIndex;
+    var cls='sib-pal-btn'+(answered?' answered':'')+(current?' current':'');
+    h+='<button class="'+cls+'" onclick="sibJumpTo('+idx+')">'+(idx+1)+'</button>';
+  });
+  document.getElementById('sib-palette').innerHTML=h;
+  var answeredCount=Object.keys(sibState.answers).length;
+  document.getElementById('sib-progress-txt').textContent=answeredCount+' of '+sibState.flat.length+' answered';
+}
+
+function confirmSubmitSIB(){
+  var answeredCount=Object.keys(sibState.answers).length;
+  var remaining=sibState.flat.length-answeredCount;
+  var msg=remaining>0?('You have '+remaining+' unanswered question(s). Submit anyway?'):'Submit your test now?';
+  if(confirm(msg)) submitSIBPaper();
+}
+
+function submitSIBPaper(){
+  if(sibState.timerId) clearInterval(sibState.timerId);
+  sibState.submitted=true;
+  var sectionScores={};
+  var totalCorrect=0;
+  sibState.flat.forEach(function(item,idx){
+    if(!sectionScores[item.section]) sectionScores[item.section]={correct:0,total:0};
+    sectionScores[item.section].total++;
+    if(sibState.answers[idx]===item.c){
+      sectionScores[item.section].correct++;
+      totalCorrect++;
+    }
+  });
+  document.getElementById('sib-quiz-wrap').style.display='none';
+  document.getElementById('sib-results-wrap').style.display='block';
+  renderSIBResults(totalCorrect,sectionScores);
+}
+
+function renderSIBResults(totalCorrect,sectionScores){
+  var total=sibState.flat.length;
+  var pct=Math.round((totalCorrect/total)*100);
+  var timeUsed=3600-sibState.timeLeft;
+  var mUsed=Math.floor(timeUsed/60);
+  var h='';
+  h+='<div class="sib-score-card">';
+  h+='<div class="sib-score-big">'+totalCorrect+' / '+total+'</div>';
+  h+='<div class="sib-score-pct">'+pct+'% score &middot; '+mUsed+' min used &middot; no negative marking applied</div>';
+  h+='</div>';
+  h+='<div class="sib-sectionscores">';
+  Object.keys(sectionScores).forEach(function(sec){
+    var s=sectionScores[sec];
+    var spct=Math.round((s.correct/s.total)*100);
+    h+='<div class="sib-secscore-box"><div class="sib-secscore-name">'+sec+'</div><div class="sib-secscore-val">'+s.correct+'/'+s.total+'</div><div class="sib-secscore-bar"><div class="sib-secscore-fill" style="width:'+spct+'%"></div></div></div>';
+  });
+  h+='</div>';
+  h+='<div class="sib-review-head">Full Review</div>';
+  h+='<div class="sib-review-list">';
+  sibState.flat.forEach(function(item,idx){
+    var userAns=sibState.answers[idx];
+    var isCorrect=userAns===item.c;
+    var isUnanswered=userAns===undefined;
+    var cls=isUnanswered?'unanswered':(isCorrect?'correct':'incorrect');
+    h+='<div class="sib-review-item '+cls+'">';
+    h+='<div class="sib-review-qhead"><span class="sib-review-num">Q'+(idx+1)+'</span><span class="sib-review-sec">'+item.section+'</span><span class="sib-review-status">'+(isUnanswered?'Not Answered':(isCorrect?'Correct':'Incorrect'))+'</span></div>';
+    h+='<div class="sib-review-qtext">'+item.q+'</div>';
+    item.o.forEach(function(opt,oidx){
+      var oc='sib-review-opt';
+      if(oidx===item.c) oc+=' right-answer';
+      else if(oidx===userAns) oc+=' wrong-answer';
+      h+='<div class="'+oc+'">'+String.fromCharCode(65+oidx)+'. '+opt+'</div>';
+    });
+    h+='<div class="sib-review-exp"><strong>Explanation:</strong> '+item.e+'</div>';
+    h+='</div>';
+  });
+  h+='</div>';
+  h+='<button class="sib-start-btn" style="margin-top:16px" onclick="backToSIBList()">&#8592; Back to Test List</button>';
+  document.getElementById('sib-results').innerHTML=h;
+}
+
+function backToSIBList(){
+  document.getElementById('sib-results-wrap').style.display='none';
+  document.getElementById('sib-quiz-wrap').style.display='none';
+  document.getElementById('sib-list-wrap').style.display='block';
+}
+
 
 // ── STATE ─────────────────────────────────────────────────────────────────────
 let activeSector='all', activeAction='all', activeDomain='all';
@@ -1850,6 +2249,7 @@ function renderIntel(id) {
 // ── INIT ──────────────────────────────────────────────────────────────────────
 renderBDDs();renderMA();renderDomain();renderSF();renderQA();renderQS();renderGD();renderStories();renderTargets();
 renderIntel('fmcg');
+renderSIBList();
 </script>
 </body>
 </html>
