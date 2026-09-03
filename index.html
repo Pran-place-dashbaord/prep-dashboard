@@ -347,6 +347,13 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--te
 /* SIB APTITUDE PREP TAB */
 .sib-intro{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:10px;padding:12px 15px;margin-bottom:14px;font-size:12px;color:var(--navy);line-height:1.6}
 .sib-intro strong{color:var(--navy)}
+.sib-back-btn{background:none;border:none;color:var(--teal);font-size:12px;font-weight:700;cursor:pointer;padding:0 0 12px;display:block}
+.sib-back-btn:hover{text-decoration:underline}
+.sib-company-card{cursor:pointer;transition:box-shadow .18s,transform .18s}
+.sib-company-card:hover{box-shadow:0 4px 14px rgba(0,0,0,.08);transform:translateY(-2px)}
+.sib-company-desc{font-size:12px;color:var(--text);line-height:1.55;margin-bottom:6px}
+.sib-company-status{font-size:11px;color:var(--teal);font-weight:600;margin-bottom:12px}
+.sib-more-card{grid-column:1/-1;border:1px dashed var(--border);border-radius:12px;padding:18px;text-align:center;font-size:12px;color:var(--muted);background:var(--light)}
 .sib-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
 .sib-card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden}
 .sib-card-head{background:var(--navy);padding:13px 16px}
@@ -474,7 +481,7 @@ document.addEventListener('click', function(e) {
   <div class="main-tab t-green" onclick="switchTab('stories',this)">📖 My Stories</div>
   <div class="main-tab t-navy2" onclick="switchTab('targets',this)">🏆 Company Targets</div>
   <div class="main-tab" onclick="switchTab('news',this)" style="color:#0E7490">📰 Stay Current</div>
-  <div class="main-tab" onclick="switchTab('sib',this)" style="color:#991B1B">📝 SIB Aptitude Prep</div>
+  <div class="main-tab" onclick="switchTab('sib',this)" style="color:#991B1B">📝 Aptitude Tests</div>
 </div>
 
 <!-- TAB 1: BDD -->
@@ -762,9 +769,15 @@ document.addEventListener('click', function(e) {
 <!-- TAB 10: SIB APTITUDE PREP -->
 <div id="tab-sib" class="tab-content">
   <div class="content">
-    <div class="sib-intro"><strong>South Indian Bank — Online Aptitude Test.</strong> Per your admit card: 60 questions across 5 sections, 60 minutes total, +1 for each correct answer, <strong>no negative marking</strong> — so attempt every question. This exact 5-section split (Quant, Logical Reasoning, English, Banking &amp; GK, Data Interpretation) is our best-guess structure since SIB hasn't published a past paper for this specific campus test — confirm with TAPMI placement cell / seniors if you get the real breakdown.</div>
+    <div class="sib-intro" id="sib-intro-companies"><strong>Aptitude Test Practice.</strong> Company-wise timed mock tests, built to match each employer's actual test format wherever we can confirm it. More companies get added here as the placement season progresses — pick a company below to start.</div>
 
-    <div id="sib-list-wrap">
+    <div id="sib-companies-wrap">
+      <div class="sib-grid" id="sib-companies-list"></div>
+    </div>
+
+    <div id="sib-list-wrap" style="display:none">
+      <button class="sib-back-btn" onclick="backToSIBCompanies()">&#8592; All Companies</button>
+      <div class="sib-intro"><strong>South Indian Bank — Online Aptitude Test.</strong> Per your admit card: 60 questions across 5 sections, 60 minutes total, +1 for each correct answer, <strong>no negative marking</strong> — so attempt every question. This exact 5-section split (Quant, Logical Reasoning, English, Banking &amp; GK, Data Interpretation) is our best-guess structure since SIB hasn't published a past paper for this specific campus test — confirm with TAPMI placement cell / seniors if you get the real breakdown.</div>
       <div class="sib-grid" id="sib-list"></div>
     </div>
 
@@ -1237,6 +1250,38 @@ const FAILURE_STORIES=[
   {brand:'Snapdeal / Freecharge',action:'Acquisition',summary:'Snapdeal paid Rs 2,400 crore for Freecharge in 2015. Sold it 2 years later for Rs 385 crore — recovering barely 16% of what it paid. Overpayment, poor integration, no coherent strategy.',lesson:'Acquisition value is created in integration, not in the deal. Two products with different user journeys, tech stacks, and cultures rarely combine well under pressure.'},
   {brand:'IKEA India',action:'Market Development',summary:'Announced entry 2006, opened first store 2018 — 12 years later. Underestimated smaller Indian homes, preference not to self-assemble, and the out-of-town store format clashing with Indian shopping habits.',lesson:'Market development fails when you transplant your existing model unchanged. Adapting to local consumer behaviour is not optional — it\'s the job.'}
 ];
+
+const APTITUDE_COMPANIES=[
+  {id:'sib',name:'South Indian Bank',tag:'Banking',logo:'\ud83c\udfe6',desc:'60 questions \u00b7 5 sections \u00b7 60 minutes \u00b7 no negative marking',status:'1 practice paper live'}
+];
+
+function renderSIBCompanies(){
+  var h='';
+  APTITUDE_COMPANIES.forEach(function(c){
+    h+='<div class="sib-card sib-company-card" onclick="openSIBCompany(\''+c.id+'\')">';
+    h+='<div class="sib-card-head"><div class="sib-card-title">'+c.logo+' '+c.name+'</div><div class="sib-card-sub">'+c.tag+'</div></div>';
+    h+='<div class="sib-card-body">';
+    h+='<div class="sib-company-desc">'+c.desc+'</div>';
+    h+='<div class="sib-company-status">'+c.status+'</div>';
+    h+='<button class="sib-start-btn">View Tests \u2192</button>';
+    h+='</div></div>';
+  });
+  h+='<div class="sib-more-card">More companies will be added here as the placement season heats up.</div>';
+  document.getElementById('sib-companies-list').innerHTML=h;
+}
+
+function openSIBCompany(id){
+  document.getElementById('sib-companies-wrap').style.display='none';
+  document.getElementById('sib-list-wrap').style.display='block';
+  renderSIBList();
+}
+
+function backToSIBCompanies(){
+  document.getElementById('sib-list-wrap').style.display='none';
+  document.getElementById('sib-quiz-wrap').style.display='none';
+  document.getElementById('sib-results-wrap').style.display='none';
+  document.getElementById('sib-companies-wrap').style.display='block';
+}
 
 const SIB_PAPERS=[
   {id:'p1',title:'Practice Paper 1',sections:[
@@ -2249,7 +2294,7 @@ function renderIntel(id) {
 // ── INIT ──────────────────────────────────────────────────────────────────────
 renderBDDs();renderMA();renderDomain();renderSF();renderQA();renderQS();renderGD();renderStories();renderTargets();
 renderIntel('fmcg');
-renderSIBList();
+renderSIBCompanies();
 </script>
 </body>
 </html>
