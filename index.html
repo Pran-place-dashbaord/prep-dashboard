@@ -777,13 +777,13 @@ document.addEventListener('click', function(e) {
 
     <div id="sib-list-wrap" style="display:none">
       <button class="sib-back-btn" onclick="backToSIBCompanies()">&#8592; All Companies</button>
-      <div class="sib-intro"><strong>South Indian Bank — Online Aptitude Test.</strong> Per your admit card: 60 questions across 5 sections, 60 minutes total, +1 for each correct answer, <strong>no negative marking</strong> — so attempt every question. This exact 5-section split (Quant, Logical Reasoning, English, Banking &amp; GK, Data Interpretation) is our best-guess structure since SIB hasn't published a past paper for this specific campus test — confirm with TAPMI placement cell / seniors if you get the real breakdown. 5 tests below, no question repeated across them — a good full drill sequence.</div>
+      <div class="sib-intro" id="sib-list-intro"></div>
       <div class="sib-grid" id="sib-list"></div>
     </div>
 
     <div id="sib-quiz-wrap" style="display:none">
       <div class="sib-topbar">
-        <div class="sib-topbar-title">South Indian Bank — Practice Test</div>
+        <div class="sib-topbar-title" id="sib-quiz-title">Practice Test</div>
         <div class="sib-timer-wrap"><span class="sib-timer-lbl">Time Left</span><span id="sib-timer">60:00</span></div>
       </div>
       <div class="sib-quiz-layout">
@@ -1252,8 +1252,11 @@ const FAILURE_STORIES=[
 ];
 
 const APTITUDE_COMPANIES=[
-  {id:'sib',name:'South Indian Bank',tag:'Banking',logo:'\ud83c\udfe6',desc:'60 questions \u00b7 5 sections \u00b7 60 minutes \u00b7 no negative marking',status:'5 practice tests live \u2014 no repeated questions'}
+  {id:'sib',name:'South Indian Bank',tag:'Banking',logo:'\ud83c\udfe6',desc:'60 questions \u00b7 5 sections \u00b7 60 minutes \u00b7 no negative marking',status:'5 practice tests live \u2014 no repeated questions',papers:'SIB_PAPERS',formatLabel:'South Indian Bank — Online Aptitude Test format',detailHtml:'<strong>South Indian Bank — Online Aptitude Test.</strong> Per your admit card: 60 questions across 5 sections, 60 minutes total, +1 for each correct answer, <strong>no negative marking</strong> — so attempt every question. This exact 5-section split (Quant, Logical Reasoning, English, Banking &amp; GK, Data Interpretation) is our best-guess structure since SIB hasn\'t published a past paper for this specific campus test — confirm with TAPMI placement cell / seniors if you get the real breakdown. 5 tests below, no question repeated across them — a good full drill sequence.'},
+  {id:'quanttower',name:'Quant Tower',tag:'Generic Quant Drill \u00b7 CAT-Medium / XAT-tricky',logo:'\ud83c\udfd7\ufe0f',desc:'40 questions \u00b7 5 floors of rising difficulty \u00b7 100 minutes \u00b7 no negative marking',status:'Not company-specific \u2014 useful prep for any FMCG/ConsumerTech/FinServ test (ITC, HUL, etc.)',papers:'QUANT_TOWER_PAPERS',formatLabel:'Climb the tower floor by floor \u2014 questions get harder as you go up',detailHtml:'<strong>Quant Tower — a pure quant climb, not tied to any one company.</strong> Difficulty is calibrated to CAT-Medium meets XAT\'s trickier wording — mixtures &amp; alligation, partnerships, work+wages, permutations with restrictions, number theory, probability, and multi-concept traps. This sits a notch above typical bank/FMCG screening tests (which usually run Easy-to-Medium, NMAT-style), so use it to build a ceiling, not as a direct simulation of any single company\'s paper. 5 floors, 8 questions each, getting harder as you climb — no repeated questions.'}
 ];
+
+var sibCurrentCompany=null;
 
 function renderSIBCompanies(){
   var h='';
@@ -1271,8 +1274,13 @@ function renderSIBCompanies(){
 }
 
 function openSIBCompany(id){
+  var company=null;
+  APTITUDE_COMPANIES.forEach(function(c){ if(c.id===id) company=c; });
+  if(!company) return;
+  sibCurrentCompany=company;
   document.getElementById('sib-companies-wrap').style.display='none';
   document.getElementById('sib-list-wrap').style.display='block';
+  document.getElementById('sib-list-intro').innerHTML=company.detailHtml;
   renderSIBList();
 }
 
@@ -1282,6 +1290,15 @@ function backToSIBCompanies(){
   document.getElementById('sib-results-wrap').style.display='none';
   document.getElementById('sib-companies-wrap').style.display='block';
 }
+
+function sibGetPapers(){
+  if(!sibCurrentCompany) return [];
+  var varName=sibCurrentCompany.papers;
+  if(varName==='SIB_PAPERS') return SIB_PAPERS;
+  if(varName==='QUANT_TOWER_PAPERS') return QUANT_TOWER_PAPERS;
+  return [];
+}
+
 
 const SIB_PAPERS=[
   {id:'p1',title:'Test 1',sections:[
@@ -1646,6 +1663,61 @@ const SIB_PAPERS=[
   ]},
 ];
 
+const QUANT_TOWER_PAPERS=[
+  {id:'quanttower',title:'Full Climb — 40 Questions',timeLimitSec:6000,sections:[
+    {name:'Floor 1 — Foundation',qs:[
+      {q:'A shopkeeper mixes two varieties of rice costing Rs 20/kg and Rs 32/kg to get a mixture costing Rs 26/kg. Find the ratio in which they are mixed.',o:['1:2','1:1','2:3','3:2'],c:1,e:'By alligation: (32-26):(26-20) = 6:6 = 1:1.'},
+      {q:'A invests Rs 20,000 for the full year. B invests Rs 30,000 but withdraws after 8 months. C invests Rs 40,000 but joins after 4 months (i.e. invests for 8 months). Find the ratio of their profit shares (A:B:C).',o:['3:3:4','2:3:4','3:4:4','4:3:3'],c:0,e:'A: 20000x12=240000. B: 30000x8=240000. C: 40000x8=320000. Ratio = 240000:240000:320000 = 3:3:4.'},
+      {q:'Find the compound interest on Rs 8,000 for 1.5 years at 10% p.a., compounded half-yearly.',o:['Rs 1,150','Rs 1,200','Rs 1,261','Rs 1,300'],c:2,e:'Half-yearly rate = 5%, periods = 3. Amount = 8000x(1.05)^3 = 8000x1.157625 = 9,261. CI = 9261-8000 = Rs 1,261.'},
+      {q:'A can complete a piece of work in 10 days and B in 15 days. They work together and earn a total of Rs 5,000 for the job. Find A\'s share.',o:['Rs 2,000','Rs 2,500','Rs 3,000','Rs 3,500'],c:2,e:'Work ratio (based on rates) = (1/10):(1/15) = 3:2. A\'s share = 5000 x 3/5 = Rs 3,000.'},
+      {q:'A vessel contains 40 litres of milk. 8 litres is removed and replaced with water; this process is repeated once more. How much milk is left in the vessel?',o:['24.6 litres','25.6 litres','26.6 litres','27.6 litres'],c:1,e:'Fraction remaining after each operation = (40-8)/40 = 0.8. After 2 operations: 40 x 0.8² = 25.6 litres.'},
+      {q:'Find the remainder when 7^45 is divided by 6.',o:['0','1','5','6'],c:1,e:'7 ≡ 1 (mod 6), so 7^45 ≡ 1^45 ≡ 1 (mod 6).'},
+      {q:'Three bells ring at intervals of 12, 15, and 18 minutes respectively. If they ring together at 6:00 AM, when will they next ring together?',o:['8:00 AM','8:30 AM','9:00 AM','9:30 AM'],c:2,e:'LCM(12,15,18) = 180 minutes = 3 hours. Next together at 6:00 AM + 3h = 9:00 AM.'},
+      {q:'Two dice are thrown together. Find the probability that the sum of the numbers is either 7 or 11.',o:['1/6','2/9','5/18','1/4'],c:1,e:'P(sum=7)=6/36, P(sum=11)=2/36. Total = 8/36 = 2/9.'},
+    ]},
+    {name:'Floor 2 — Building Speed',qs:[
+      {q:'A car travels the first half of a journey at 60 km/h and the second half at 40 km/h. Find the average speed for the entire journey.',o:['48 km/h','50 km/h','52 km/h','45 km/h'],c:0,e:'For equal distances, average speed = 2xy/(x+y) = 2x60x40/100 = 48 km/h.'},
+      {q:'A alone can finish a work in 15 days. He works alone for 5 days, then B joins him and together they finish the remaining work in 4 days. In how many days can B alone finish the entire work?',o:['8 days','10 days','12 days','15 days'],c:1,e:'A does 5/15=1/3 of the work in 5 days; 2/3 remains. Combined rate needed: (2/3)/4=1/6/day. A\'s rate=1/15, so B\'s rate=1/6-1/15=1/10. B alone takes 10 days.'},
+      {q:'In how many ways can the letters of the word \'MOBILE\' be arranged so that all the vowels always come together?',o:['72','96','120','144'],c:3,e:'Vowels O,I,E treated as one block: 4 units (3 consonants + 1 block) arrange in 4!=24 ways; vowels within the block arrange in 3!=6 ways. Total = 24x6=144.'},
+      {q:'If a real number x satisfies |x-3| + |x+2| = 7, find all possible values of x.',o:['x = -3 or x = 4','x = -4 or x = 3','x = -2 or x = 5','x = -5 or x = 2'],c:0,e:'For -2≤x≤3, the sum is always 5, so no solution there. For x>3: (x-3)+(x+2)=2x-1=7→x=4. For x<-2: (3-x)+(-x-2)=1-2x=7→x=-3.'},
+      {q:'A circle of radius 5 cm has a chord of length 8 cm. Find the distance of the chord from the centre.',o:['2 cm','3 cm','4 cm','4.5 cm'],c:1,e:'Half-chord = 4 cm. Distance = √(5²-4²) = √9 = 3 cm.'},
+      {q:'A trader professes to sell his goods at cost price but uses a false weight of 950 gm for a kg. Find his actual profit percentage (approx).',o:['4.76%','5.00%','5.26%','5.50%'],c:2,e:'Profit % = (1000-950)/950 x 100 ≈ 5.26%.'},
+      {q:'The average of 5 numbers is 20. If one number is excluded, the average of the remaining 4 becomes 22. Find the excluded number.',o:['8','10','12','14'],c:2,e:'Sum of 5 numbers=100. Sum of remaining 4=88. Excluded number=100-88=12.'},
+      {q:'Four years ago, the ratio of the ages of A and B was 3:4. Six years from now, the ratio will be 4:5. Find the sum of their present ages.',o:['72','75','78','80'],c:2,e:'4 yrs ago: A=3x,B=4x. Present: A=3x+4,B=4x+4. In 6 yrs: (3x+10)/(4x+10)=4/5 → x=10. Present ages: A=34, B=44. Sum=78.'},
+    ]},
+    {name:'Floor 3 — XAT Twist',qs:[
+      {q:'Two containers of equal capacity are filled with mixtures of milk and water. In the first, milk:water = 7:3; in the second, milk:water = 4:1. Equal quantities from both are mixed in a third container. Find the ratio of milk to water in the third container.',o:['3:1','7:3','31:9','5:2'],c:0,e:'Milk fraction in container 1 = 0.7, in container 2 = 0.8. Equal quantities mixed → average milk fraction = 0.75, i.e. milk:water = 3:1.'},
+      {q:'For how many positive integer values of x does the inequality x² - 5x + 6 < 0 hold?',o:['0','1','2','3'],c:0,e:'Factoring: (x-2)(x-3) < 0 → 2 < x < 3. There is no integer strictly between 2 and 3, so the count is 0.'},
+      {q:'In how many ways can 5 boys and 3 girls be seated in a row such that no two girls sit together?',o:['7,200','10,800','14,400','17,280'],c:2,e:'Arrange 5 boys: 5!=120 ways, creating 6 gaps. Choose and arrange 3 girls in 3 of these gaps: 6x5x4=120 ways. Total = 120x120 = 14,400.'},
+      {q:'Find the remainder when 2^100 is divided by 7.',o:['1','2','4','6'],c:1,e:'2³=8≡1 (mod 7). Since 100=3x33+1, 2^100 ≡ 2^1 ≡ 2 (mod 7).'},
+      {q:'A, B, and C can complete a work in 12, 15, and 20 days respectively. They undertake the work together for Rs 5,600. Find C\'s share.',o:['Rs 1,200','Rs 1,400','Rs 1,600','Rs 1,800'],c:1,e:'Rates in LCM(60) units: A=5, B=4, C=3 units/day, ratio 5:4:3 (12 parts). C\'s share = 5600 x 3/12 = Rs 1,400.'},
+      {q:'A man spends 75% of his income. His income increases by 20% and his expenditure increases by 10%. Find the percentage increase in his savings.',o:['25%','40%','50%','60%'],c:2,e:'Let income=100, expenditure=75, savings=25. New income=120, new expenditure=82.5, new savings=37.5. Increase = (37.5-25)/25 x 100 = 50%.'},
+      {q:'In what ratio must three varieties of tea costing Rs 60, Rs 75, and Rs 100 per kg be mixed (using equal quantities of the two cheaper varieties) so that the mixture costs Rs 80 per kg?',o:['3:3:4','4:4:5','5:5:6','2:2:3'],c:1,e:'Let quantities of Rs 60 and Rs 75 tea each be x, and Rs 100 tea be y. Cost equation: 60x+75x+100y = 80(2x+y) → 135x+100y=160x+80y → 20y=25x → y=1.25x. Ratio = x:x:y = 1:1:1.25 = 4:4:5.'},
+      {q:'A right triangle has legs of length 9 cm and 12 cm. Find the radius of its circumscribed circle.',o:['6 cm','6.5 cm','7 cm','7.5 cm'],c:3,e:'Hypotenuse = √(9²+12²) = 15 cm. For a right triangle, the circumradius = hypotenuse/2 = 7.5 cm.'},
+    ]},
+    {name:'Floor 4 — Multi-Concept',qs:[
+      {q:'If f(x) = |x-1| + |x-2| + |x-3|, find the minimum value of f(x).',o:['1','2','3','4'],c:1,e:'The minimum of a sum of absolute deviations occurs at the median of the points (here, x=2). f(2) = 1+0+1 = 2.'},
+      {q:'Two trains, 150 m and 100 m long, run in opposite directions on parallel tracks at speeds of 54 km/h and 36 km/h respectively. Find the time taken for them to cross each other.',o:['8 seconds','9 seconds','10 seconds','12 seconds'],c:2,e:'Relative speed = 54+36 = 90 km/h = 25 m/s. Total length = 250 m. Time = 250/25 = 10 seconds.'},
+      {q:'The difference between the compound interest and simple interest on a sum for 2 years at 10% p.a. is Rs 100. Find the sum.',o:['Rs 8,000','Rs 9,000','Rs 10,000','Rs 12,000'],c:2,e:'For 2 years, CI-SI = P x (R/100)². 100 = P x 0.01 → P = Rs 10,000.'},
+      {q:'From a group of 6 men and 4 women, a committee of 5 is to be formed such that it includes at least 3 women. In how many ways can this be done?',o:['56','60','66','72'],c:2,e:'Case (3W,2M): C(4,3)xC(6,2) = 4x15 = 60. Case (4W,1M): C(4,4)xC(6,1) = 1x6 = 6. Total = 60+6 = 66.'},
+      {q:'A bag contains 5 red and 7 blue balls. Two balls are drawn without replacement. Find the probability that both are red.',o:['5/33','5/22','7/33','1/6'],c:0,e:'P(both red) = (5/12) x (4/11) = 20/132 = 5/33.'},
+      {q:'The price of a commodity is increased by 20% and then decreased by 20%. Find the net percentage change in price.',o:['No change','4% increase','4% decrease','2% decrease'],c:2,e:'Net multiplier = 1.20 x 0.80 = 0.96, i.e. a 4% net decrease.'},
+      {q:'A two-digit number is such that the product of its digits is 12. When 36 is added to the number, the digits get reversed. Find the number.',o:['26','34','43','62'],c:0,e:'Let the number be 10a+b, with ab=12. 10a+b+36=10b+a → 9a-9b=-36 → b=a+4. Solving a(a+4)=12 gives a=2, b=6. The number is 26 (26+36=62, the reverse).'},
+      {q:'A container has a mixture of milk and water in the ratio 5:3. If 16 litres of the mixture is removed and replaced with pure water, the new ratio becomes 5:7. Find the initial quantity of the mixture.',o:['36 litres','40 litres','44 litres','48 litres'],c:3,e:'Let total volume=V, initial milk=5V/8. After removing 16 L and replacing with water, remaining milk = (5V/8)(V-16)/V. Setting milk:total=5:12 (from ratio 5:7) and solving gives V=48 litres.'},
+    ]},
+    {name:'Rooftop — Toughest Climb',qs:[
+      {q:'A, B, and C together can complete a work in 6 days. A and B together can complete it in 10 days. B and C together can complete it in 12 days. In how many days can B alone complete the work?',o:['45 days','50 days','55 days','60 days'],c:3,e:'1/A+1/B+1/C=1/6. Since 1/A+1/B=1/10, 1/C=1/6-1/10=1/15. Since 1/B+1/C=1/12, 1/B=1/12-1/15=1/60. B alone takes 60 days.'},
+      {q:'In an examination, 70% of candidates passed in Mathematics, 65% passed in Physics, and 20% failed in both subjects. What percentage passed in both subjects?',o:['45%','50%','55%','60%'],c:2,e:'Passed at least one = 100-20 = 80%. Passed both = 70+65-80 = 55% (by inclusion-exclusion).'},
+      {q:'A train crosses a platform 300 m long in 25 seconds and crosses a man standing on the platform in 10 seconds. Find the length of the train.',o:['150 m','175 m','200 m','225 m'],c:2,e:'Let train length=L, speed=v. L/10=v and (L+300)/25=v. So L/10=(L+300)/25 → 25L=10L+3000 → 15L=3000 → L=200 m.'},
+      {q:'How many 4-digit numbers can be formed using the digits 0-9 (without repetition) such that the number is divisible by 5?',o:['840','896','952','1008'],c:2,e:'Case units=0: remaining 3 digits from 9 arranged freely = 9x8x7=504. Case units=5: 3 digits from remaining 9 (excluding 5), minus those with leading 0 = 504-56=448. Total = 504+448 = 952.'},
+      {q:'From a standard pack of 52 cards, 4 cards are drawn at random. Find the probability that all four are kings.',o:['1/54,145','1/135,725','1/270,725','1/650,000'],c:2,e:'P = C(4,4)/C(52,4) = 1/270,725.'},
+      {q:'A sum of money is divided among A, B, and C such that for every rupee A gets, B gets 65 paise and C gets 40 paise. If C\'s share is Rs 40, find the total sum.',o:['Rs 195','Rs 200','Rs 205','Rs 210'],c:2,e:'A:B:C = 100:65:40 = 20:13:8 (41 parts total). C\'s share = 8 parts = Rs 40, so 1 part = Rs 5. Total = 41 x 5 = Rs 205.'},
+      {q:'Rs 10,000 is invested for 2 years at 10% p.a. for the first year and 12% p.a. for the second year, compounded annually. Find the total amount at the end of 2 years.',o:['Rs 11,980','Rs 12,100','Rs 12,320','Rs 12,540'],c:2,e:'Amount = 10000 x 1.10 x 1.12 = 10000 x 1.232 = Rs 12,320.'},
+      {q:'A man can row 8 km upstream and 8 km downstream in a total of 3 hours. If the speed of the stream is 2 km/h, find the speed of the boat in still water.',o:['5 km/h','6 km/h','7 km/h','8 km/h'],c:1,e:'Let boat speed=x. 8/(x-2)+8/(x+2)=3. Solving: 3x²-16x-12=0 → x=6 km/h (taking the positive root).'},
+    ]},
+  ]}
+];
+
 // ── SIB APTITUDE PREP ENGINE ────────────────────────────────────────────────
 let sibState={paper:null,flat:[],qIndex:0,answers:{},timeLeft:3600,timerId:null,submitted:false};
 
@@ -1661,15 +1733,18 @@ function sibFlatten(paper){
 
 function renderSIBList(){
   var h='';
-  SIB_PAPERS.forEach(function(p){
+  var papers=sibGetPapers();
+  papers.forEach(function(p){
     var qCount=0;
     p.sections.forEach(function(s){ qCount+=s.qs.length; });
+    var timeSec=p.timeLimitSec||(qCount*60);
+    var timeMin=Math.round(timeSec/60);
     h+='<div class="sib-card">';
-    h+='<div class="sib-card-head"><div class="sib-card-title">'+p.title+'</div><div class="sib-card-sub">South Indian Bank — Online Aptitude Test format</div></div>';
+    h+='<div class="sib-card-head"><div class="sib-card-title">'+p.title+'</div><div class="sib-card-sub">'+sibCurrentCompany.formatLabel+'</div></div>';
     h+='<div class="sib-card-body">';
     h+='<div class="sib-meta-row">';
     h+='<div class="sib-meta-box"><div class="sib-meta-val">'+qCount+'</div><div class="sib-meta-lbl">Questions</div></div>';
-    h+='<div class="sib-meta-box"><div class="sib-meta-val">60</div><div class="sib-meta-lbl">Minutes</div></div>';
+    h+='<div class="sib-meta-box"><div class="sib-meta-val">'+timeMin+'</div><div class="sib-meta-lbl">Minutes</div></div>';
     h+='<div class="sib-meta-box"><div class="sib-meta-val">'+p.sections.length+'</div><div class="sib-meta-lbl">Sections</div></div>';
     h+='<div class="sib-meta-box"><div class="sib-meta-val">0</div><div class="sib-meta-lbl">Negative Mark</div></div>';
     h+='</div>';
@@ -1684,12 +1759,17 @@ function renderSIBList(){
 
 function startSIBPaper(id){
   var paper=null;
-  SIB_PAPERS.forEach(function(p){ if(p.id===id) paper=p; });
+  var papers=sibGetPapers();
+  papers.forEach(function(p){ if(p.id===id) paper=p; });
   if(!paper) return;
-  sibState={paper:paper,flat:sibFlatten(paper),qIndex:0,answers:{},timeLeft:3600,timerId:null,submitted:false};
+  var qCount=0;
+  paper.sections.forEach(function(s){ qCount+=s.qs.length; });
+  var timeSec=paper.timeLimitSec||(qCount*60);
+  sibState={paper:paper,flat:sibFlatten(paper),qIndex:0,answers:{},timeLeft:timeSec,totalTime:timeSec,timerId:null,submitted:false};
   document.getElementById('sib-list-wrap').style.display='none';
   document.getElementById('sib-results-wrap').style.display='none';
   document.getElementById('sib-quiz-wrap').style.display='block';
+  document.getElementById('sib-quiz-title').textContent=sibCurrentCompany.name+' — '+paper.title;
   renderSIBQuestion();
   renderSIBPalette();
   if(sibState.timerId) clearInterval(sibState.timerId);
@@ -1806,7 +1886,7 @@ function submitSIBPaper(){
 function renderSIBResults(totalCorrect,sectionScores){
   var total=sibState.flat.length;
   var pct=Math.round((totalCorrect/total)*100);
-  var timeUsed=3600-sibState.timeLeft;
+  var timeUsed=sibState.totalTime-sibState.timeLeft;
   var mUsed=Math.floor(timeUsed/60);
   var h='';
   h+='<div class="sib-score-card">';
