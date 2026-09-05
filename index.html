@@ -1253,8 +1253,7 @@ const FAILURE_STORIES=[
 
 const APTITUDE_COMPANIES=[
   {id:'sib',name:'South Indian Bank',tag:'Banking',logo:'\ud83c\udfe6',desc:'60 questions \u00b7 5 sections \u00b7 60 minutes \u00b7 no negative marking',status:'5 practice tests live \u2014 no repeated questions',papers:'SIB_PAPERS',formatLabel:'South Indian Bank — Online Aptitude Test format',detailHtml:'<strong>South Indian Bank — Online Aptitude Test.</strong> Per your admit card: 60 questions across 5 sections, 60 minutes total, +1 for each correct answer, <strong>no negative marking</strong> — so attempt every question. This exact 5-section split (Quant, Logical Reasoning, English, Banking &amp; GK, Data Interpretation) is our best-guess structure since SIB hasn\'t published a past paper for this specific campus test — confirm with TAPMI placement cell / seniors if you get the real breakdown. 5 tests below, no question repeated across them — a good full drill sequence.'},
-  {id:'quanttower',name:'Quant Tower',tag:'Generic Quant Drill',logo:'\ud83c\udfd7\ufe0f',desc:'4 sets \u00b7 15 questions each \u00b7 45 minutes \u00b7 no negative marking',status:'Not company-specific \u2014 useful prep for any FMCG/ConsumerTech/FinServ test',papers:'QUANT_TOWER_PAPERS',formatLabel:'A pure quant climb, not tied to any one company',detailHtml:'<strong>Quant Tower — a pure quant climb, not tied to any one company.</strong> This sits a notch above typical bank/FMCG screening tests (which usually run Easy-to-Medium, NMAT-style). Use it to build a ceiling, not as a direct simulation of any single company\'s paper. 4 sets, 15 questions each, getting harder as you go — no repeated questions across any set.'},
-  {id:'nmattower',name:'Quant Sprint',tag:'Generic Quant Drill \u00b7 Easy/Direct',logo:'\u26a1',desc:'4 sets \u00b7 20 questions each \u00b7 20 minutes \u00b7 no negative marking',status:'Not company-specific \u2014 the fast, high-volume, direct-formula style most FMCG/bank screening tests actually use',papers:'NMAT_TOWER_PAPERS',formatLabel:'A pure quant climb, not tied to any one company',detailHtml:'<strong>Quant Sprint — a pure quant drill, not tied to any one company.</strong> This is the other end of the difficulty scale from Quant Tower: single or double-step, direct-formula questions (profit &amp; loss, SI/CI, ratios, time-work, speed, percentages) at high volume under tight time pressure — the pace most FMCG/bank campus screening tests (Easy-to-Medium, NMAT-style) actually run at. 4 sets, 20 questions each, 1 minute per question — no repeated questions across any set.'}
+  {id:'quanttower',name:'Quant Tower',tag:'Generic Quant Drill',logo:'\ud83c\udfd7\ufe0f',desc:'4 tests \u00b7 20 questions each \u00b7 40 minutes \u00b7 no negative marking',status:'Not company-specific \u2014 useful prep for any FMCG/ConsumerTech/FinServ test',papers:'QUANT_TOWER_PAPERS',formatLabel:'A pure quant climb, not tied to any one company',detailHtml:'<strong>Quant Tower — a pure quant climb, not tied to any one company.</strong> Each test opens with a 5-question Quant Warm-up (fast, direct-formula questions, the pace most FMCG/bank screening tests actually run at), then steps up through Tricky Wording, Multi-Concept, and Toughest Climb — the notch above typical Easy-to-Medium screening tests. Use it to build a ceiling, not as a direct simulation of any single company\'s paper. 4 tests, 20 questions each, getting harder as you go — no repeated questions across any test.'}
 ];
 
 var sibCurrentCompany=null;
@@ -1297,7 +1296,6 @@ function sibGetPapers(){
   var varName=sibCurrentCompany.papers;
   if(varName==='SIB_PAPERS') return SIB_PAPERS;
   if(varName==='QUANT_TOWER_PAPERS') return QUANT_TOWER_PAPERS;
-  if(varName==='NMAT_TOWER_PAPERS') return NMAT_TOWER_PAPERS;
   return [];
 }
 
@@ -1666,7 +1664,14 @@ const SIB_PAPERS=[
 ];
 
 const QUANT_TOWER_PAPERS=[
-  {id:'qt1',title:'Set 1',timeLimitSec:2700,sections:[
+  {id:'qt1',title:'Test 1',timeLimitSec:2400,sections:[
+    {name:'Quant Warm-up',qs:[
+      {q:'A trader buys an item marked at Rs 1000 at a discount of 20%, then sells it at a profit of 15% on his cost price. Find the selling price.',o:['Rs 880','Rs 920','Rs 960','Rs 1000'],c:1,e:'Cost price = 1000 x (1-20/100) = Rs 800. SP = cost x (1+15/100) = Rs 920.'},
+      {q:'A car covers the first half of a journey at 40 km/h and the second half at 60 km/h. Find the average speed for the entire journey.',o:['43 km/h','48 km/h','53 km/h','58 km/h'],c:1,e:'Average speed = 2xy/(x+y) = 2x40x60/(40+60) = 48 km/h.'},
+      {q:'Three traffic signals change every 8, 12, and 15 seconds respectively. If they all change together at 9:00 AM, after how many seconds will they next change together?',o:['110 seconds','120 seconds','130 seconds','140 seconds'],c:1,e:'LCM(8,12,15) = 120. They will next change together after 120 seconds.'},
+      {q:'A can complete a work in 10 days and B in 15 days. Working together, how long will they take?',o:['5.0 days','6 days','7.0 days','8.0 days'],c:1,e:'LCM(10,15)=30. A\'s rate=3/day, B\'s rate=2/day, combined=5/day. Time=30/5=6 days.'},
+      {q:'The speed of a boat in still water is 10 km/h and the speed of the stream is 2 km/h. Find the downstream and upstream speeds.',o:['10 km/h downstream, 8 km/h upstream','12 km/h downstream, 8 km/h upstream','12 km/h downstream, 6 km/h upstream','14 km/h downstream, 8 km/h upstream'],c:1,e:'Downstream speed = 10+2 = 12 km/h. Upstream speed = 10-2 = 8 km/h.'},
+    ]},
     {name:'Tricky Wording',qs:[
       {q:'Two containers of equal capacity are filled with mixtures of milk and water. In the first, milk:water = 7:3; in the second, milk:water = 4:1. Equal quantities from both are mixed in a third container. Find the ratio of milk to water in the third container.',o:['3:1','7:3','31:9','5:2'],c:0,e:'Milk fraction in container 1 = 0.7, in container 2 = 0.8. Equal quantities mixed → average milk fraction = 0.75, i.e. milk:water = 3:1.'},
       {q:'For how many positive integer values of x does the inequality x² - 5x + 6 < 0 hold?',o:['0','1','2','3'],c:0,e:'Factoring: (x-2)(x-3) < 0 → 2 < x < 3. There is no integer strictly between 2 and 3, so the count is 0.'},
@@ -1689,7 +1694,14 @@ const QUANT_TOWER_PAPERS=[
       {q:'From a standard pack of 52 cards, 4 cards are drawn at random. Find the probability that all four are kings.',o:['1/54,145','1/135,725','1/270,725','1/650,000'],c:2,e:'P = C(4,4)/C(52,4) = 1/270,725.'},
     ]},
   ]},
-  {id:'qt2',title:'Set 2',timeLimitSec:2700,sections:[
+  {id:'qt2',title:'Test 2',timeLimitSec:2400,sections:[
+    {name:'Quant Warm-up',qs:[
+      {q:'A trader buys an item marked at Rs 800 at a discount of 10%, then sells it at a profit of 20% on his cost price. Find the selling price.',o:['Rs 824','Rs 864','Rs 904','Rs 944'],c:1,e:'Cost price = 800 x (1-10/100) = Rs 720. SP = cost x (1+20/100) = Rs 864.'},
+      {q:'A car covers the first half of a journey at 30 km/h and the second half at 50 km/h. Find the average speed for the entire journey.',o:['32 km/h','37.5 km/h','42 km/h','48 km/h'],c:1,e:'Average speed = 2xy/(x+y) = 2x30x50/(30+50) = 37.5 km/h.'},
+      {q:'Three traffic signals change every 6, 9, and 15 seconds respectively. If they all change together at 9:00 AM, after how many seconds will they next change together?',o:['80 seconds','90 seconds','100 seconds','110 seconds'],c:1,e:'LCM(6,9,15) = 90. They will next change together after 90 seconds.'},
+      {q:'A can complete a work in 12 days and B in 18 days. Working together, how long will they take?',o:['6.2 days','7.2 days','8.2 days','9.2 days'],c:1,e:'LCM(12,18)=36. A\'s rate=3/day, B\'s rate=2/day, combined=5/day. Time=36/5=7.2 days.'},
+      {q:'The speed of a boat in still water is 12 km/h and the speed of the stream is 3 km/h. Find the downstream and upstream speeds.',o:['13 km/h downstream, 9 km/h upstream','15 km/h downstream, 9 km/h upstream','15 km/h downstream, 7 km/h upstream','17 km/h downstream, 9 km/h upstream'],c:1,e:'Downstream speed = 12+3 = 15 km/h. Upstream speed = 12-3 = 9 km/h.'},
+    ]},
     {name:'Tricky Wording',qs:[
       {q:'A man spends 75% of his income. His income increases by 20% and his expenditure increases by 10%. Find the percentage increase in his savings.',o:['25%','40%','50%','60%'],c:2,e:'Let income=100, expenditure=75, savings=25. New income=120, new expenditure=82.5, new savings=37.5. Increase = (37.5-25)/25 x 100 = 50%.'},
       {q:'In what ratio must three varieties of tea costing Rs 60, Rs 75, and Rs 100 per kg be mixed (using equal quantities of the two cheaper varieties) so that the mixture costs Rs 80 per kg?',o:['3:3:4','4:4:5','5:5:6','2:2:3'],c:1,e:'Let quantities of Rs 60 and Rs 75 tea each be x, and Rs 100 tea be y. Cost equation: 60x+75x+100y = 80(2x+y) → 135x+100y=160x+80y → 20y=25x → y=1.25x. Ratio = x:x:y = 1:1:1.25 = 4:4:5.'},
@@ -1712,7 +1724,14 @@ const QUANT_TOWER_PAPERS=[
       {q:'In a survey, 60% of respondents like tea, 50% like coffee, and 20% like neither. What percentage like both tea and coffee?',o:['20%','25%','30%','35%'],c:2,e:'Liking at least one = 100-20 = 80%. Both = 60+50-80 = 30% (by inclusion-exclusion).'},
     ]},
   ]},
-  {id:'qt3',title:'Set 3',timeLimitSec:2700,sections:[
+  {id:'qt3',title:'Test 3',timeLimitSec:2400,sections:[
+    {name:'Quant Warm-up',qs:[
+      {q:'A trader buys an item marked at Rs 1200 at a discount of 25%, then sells it at a profit of 10% on his cost price. Find the selling price.',o:['Rs 950','Rs 990','Rs 1030','Rs 1070'],c:1,e:'Cost price = 1200 x (1-25/100) = Rs 900. SP = cost x (1+10/100) = Rs 990.'},
+      {q:'A car covers the first half of a journey at 50 km/h and the second half at 75 km/h. Find the average speed for the entire journey.',o:['55 km/h','60 km/h','65 km/h','70 km/h'],c:1,e:'Average speed = 2xy/(x+y) = 2x50x75/(50+75) = 60 km/h.'},
+      {q:'Three traffic signals change every 10, 15, and 20 seconds respectively. If they all change together at 9:00 AM, after how many seconds will they next change together?',o:['50 seconds','60 seconds','70 seconds','80 seconds'],c:1,e:'LCM(10,15,20) = 60. They will next change together after 60 seconds.'},
+      {q:'A can complete a work in 8 days and B in 24 days. Working together, how long will they take?',o:['5.0 days','6 days','7.0 days','8.0 days'],c:1,e:'LCM(8,24)=24. A\'s rate=3/day, B\'s rate=1/day, combined=4/day. Time=24/4=6 days.'},
+      {q:'The speed of a boat in still water is 15 km/h and the speed of the stream is 5 km/h. Find the downstream and upstream speeds.',o:['18 km/h downstream, 10 km/h upstream','20 km/h downstream, 10 km/h upstream','20 km/h downstream, 8 km/h upstream','22 km/h downstream, 10 km/h upstream'],c:1,e:'Downstream speed = 15+5 = 20 km/h. Upstream speed = 15-5 = 10 km/h.'},
+    ]},
     {name:'Tricky Wording',qs:[
       {q:'In how many ways can the letters of the word \'NUMBER\' be arranged so that N and B always come together?',o:['120','180','240','360'],c:2,e:'Treat N,B as one block: 5 units (4 other letters + 1 block) arrange in 5!=120 ways; N,B arrange within the block in 2!=2 ways. Total = 120x2=240.'},
       {q:'Find the remainder when 5^203 is divided by 7.',o:['2','3','4','5'],c:1,e:'Powers of 5 mod 7 cycle with period 6: 5,4,6,2,3,1. Since 203 = 6x33+5, the remainder matches the 5th term in the cycle: 5^203 ≡ 3 (mod 7).'},
@@ -1735,7 +1754,14 @@ const QUANT_TOWER_PAPERS=[
       {q:'A population grows at 10% per annum. If the population after 2 years is 12,100, find the initial population.',o:['9,000','9,500','10,000','10,500'],c:2,e:'Initial population = 12100/(1.1)² = 12100/1.21 = 10,000.'},
     ]},
   ]},
-  {id:'qt4',title:'Set 4',timeLimitSec:2700,sections:[
+  {id:'qt4',title:'Test 4',timeLimitSec:2400,sections:[
+    {name:'Quant Warm-up',qs:[
+      {q:'A trader buys an item marked at Rs 600 at a discount of 15%, then sells it at a profit of 25% on his cost price. Find the selling price.',o:['Rs 598','Rs 638','Rs 678','Rs 718'],c:1,e:'Cost price = 600 x (1-15/100) = Rs 510. SP = cost x (1+25/100) = Rs 638.'},
+      {q:'A car covers the first half of a journey at 45 km/h and the second half at 60 km/h. Find the average speed for the entire journey.',o:['46 km/h','51.4 km/h','56 km/h','61 km/h'],c:1,e:'Average speed = 2xy/(x+y) = 2x45x60/(45+60) = 51.4 km/h.'},
+      {q:'Three traffic signals change every 12, 16, and 24 seconds respectively. If they all change together at 9:00 AM, after how many seconds will they next change together?',o:['38 seconds','48 seconds','58 seconds','68 seconds'],c:1,e:'LCM(12,16,24) = 48. They will next change together after 48 seconds.'},
+      {q:'A can complete a work in 20 days and B in 30 days. Working together, how long will they take?',o:['11.0 days','12 days','13.0 days','14.0 days'],c:1,e:'LCM(20,30)=60. A\'s rate=3/day, B\'s rate=2/day, combined=5/day. Time=60/5=12 days.'},
+      {q:'The speed of a boat in still water is 8 km/h and the speed of the stream is 2 km/h. Find the downstream and upstream speeds.',o:['8 km/h downstream, 6 km/h upstream','10 km/h downstream, 6 km/h upstream','10 km/h downstream, 4 km/h upstream','12 km/h downstream, 6 km/h upstream'],c:1,e:'Downstream speed = 8+2 = 10 km/h. Upstream speed = 8-2 = 6 km/h.'},
+    ]},
     {name:'Tricky Wording',qs:[
       {q:'Find the smallest number which, when divided by 6, 9, and 12, leaves a remainder of 4 in each case.',o:['34','36','40','46'],c:2,e:'LCM(6,9,12) = 36. The smallest such number = 36+4 = 40.'},
       {q:'Two numbers are in the ratio 4:5. If each number is increased by 10, the new ratio becomes 6:7. Find the two numbers.',o:['16 and 20','20 and 25','24 and 30','28 and 35'],c:1,e:'Let the numbers be 4x and 5x. (4x+10)/(5x+10)=6/7 → 7(4x+10)=6(5x+10) → 28x+70=30x+60 → x=5. The numbers are 20 and 25.'},
@@ -1756,105 +1782,6 @@ const QUANT_TOWER_PAPERS=[
       {q:'Find the smallest positive integer that leaves a remainder of 2 when divided by 3, a remainder of 3 when divided by 5, and a remainder of 4 when divided by 7.',o:['89','98','104','119'],c:2,e:'In each case, the number is exactly 1 less than a multiple of the divisor, so n+1 is divisible by 3, 5, and 7. The smallest such n+1 = LCM(3,5,7) = 105, so n = 104.'},
       {q:'A is twice as old as B was when A was as old as B is now. If the sum of their present ages is 63 years, find A\'s present age.',o:['30 years','33 years','36 years','39 years'],c:2,e:'Let A\'s present age=a, B\'s=b. \'When A was as old as B is now\' was (a-b) years ago, when B\'s age was b-(a-b)=2b-a. Given a=2(2b-a): 3a=4b. With a+b=63: a=36, b=27.'},
       {q:'Rs 10,000 is invested for 3 years at a flat compound rate of 8% p.a. Find the total interest earned (rounded to the nearest rupee).',o:['Rs 2,400','Rs 2,486','Rs 2,597','Rs 2,650'],c:2,e:'Amount = 10000 x (1.08)³ = 10000 x 1.259712 = Rs 12,597.12. Interest = Rs 2,597 (rounded).'},
-    ]},
-  ]},
-];
-
-const NMAT_TOWER_PAPERS=[
-  {id:'nm1',title:'Set 1',timeLimitSec:1200,sections:[
-    {name:'Quant Sprint',qs:[
-      {q:'An article bought for Rs 400 is sold for Rs 460. Find the profit percentage.',o:['10%','20%','15%','25%'],c:2,e:'Profit = Rs 460-400 = Rs 60. Profit% = 60/400 x 100 = 15%.'},
-      {q:'Find the simple interest on Rs 5000 for 3 years at 8% p.a.',o:['Rs 1000','Rs 1400','Rs 1200','Rs 1600'],c:2,e:'SI = PRT/100 = 5000 x 8 x 3 / 100 = Rs 1200.'},
-      {q:'Find the average of the numbers from 11 to 15 (inclusive).',o:['11','12','13','14'],c:2,e:'Sum = 65, count = 5. Average = 65/5 = 13.'},
-      {q:'A sum of Rs 1200 is divided between X and Y in the ratio 3:5. Find X\'s share.',o:['Rs 350','Rs 450','Rs 550','Rs 650'],c:1,e:'X\'s share = 1200 x 3/8 = Rs 450.'},
-      {q:'A can complete a work in 10 days and B in 15 days. Working together, how long will they take?',o:['5.0 days','6 days','7.0 days','8.0 days'],c:1,e:'LCM(10,15)=30. A\'s rate=3/day, B\'s rate=2/day, combined=5/day. Time=30/5=6 days.'},
-      {q:'A train 100 m long crosses a pole in 10 seconds. Find its speed in km/h.',o:['30 km/h','33 km/h','36 km/h','39 km/h'],c:2,e:'Speed = 100/10 = 10 m/s = 10 x 18/5 = 36 km/h.'},
-      {q:'Find 25% of 240.',o:['50','60','70','80'],c:1,e:'25% of 240 = (25/100) x 240 = 60.'},
-      {q:'A shirt is marked at Rs 500 and sold at a discount of 10%. Find the selling price.',o:['Rs 420','Rs 450','Rs 480','Rs 510'],c:1,e:'SP = MP x (1-discount%) = 500 x 0.90 = Rs 450.'},
-      {q:'Three traffic signals change every 8, 12, and 15 seconds respectively. If they all change together at 9:00 AM, after how many seconds will they next change together?',o:['110 seconds','120 seconds','130 seconds','140 seconds'],c:1,e:'LCM(8,12,15) = 120. They will next change together after 120 seconds.'},
-      {q:'Find the area of a rectangle with length 12 units and breadth 8 units.',o:['76 sq units','96 sq units','116 sq units','136 sq units'],c:1,e:'Area = length x breadth = 12 x 8 = 96 sq units.'},
-      {q:'The sum of the ages of A and B is 36 years, and their ages are in the ratio 4:5. Find the age of the older person (B).',o:['16 years','20 years','24 years','28 years'],c:1,e:'Total parts = 4+5=9. Each part = 36/9. B\'s age = 5 parts = 20 years.'},
-      {q:'Suppose a die is thrown once. Find the probability of getting a number greater than 4.',o:['1/6','1/4','1/3','1/2'],c:2,e:'Probability = 2/6 = 1/3.'},
-      {q:'Find the next number in the series: 3, 6, 9, 12, 15, ?',o:['8','13','18','23'],c:2,e:'The pattern is to add 3 each time. Next term = 18.'},
-      {q:'A car covers the first half of a journey at 40 km/h and the second half at 60 km/h. Find the average speed for the entire journey.',o:['43 km/h','48 km/h','53 km/h','58 km/h'],c:1,e:'Average speed = 2xy/(x+y) = 2x40x60/(40+60) = 48 km/h.'},
-      {q:'Find the compound interest on Rs 5000 for 2 years at 10% p.a. compounded annually.',o:['Rs 950','Rs 1050','Rs 1150','Rs 1250'],c:1,e:'Amount = 5000 x (1+10/100)² = Rs 6050. CI = Rs 1050.'},
-      {q:'A and B invest in a business in the ratio 2:3. If the total profit is Rs 5000, find A\'s share.',o:['Rs 1800','Rs 2000','Rs 2200','Rs 2400'],c:1,e:'A\'s share = 5000 x 2/(2+3) = Rs 2000.'},
-      {q:'The speed of a boat in still water is 10 km/h and the speed of the stream is 2 km/h. Find the downstream and upstream speeds.',o:['10 km/h downstream, 8 km/h upstream','12 km/h downstream, 8 km/h upstream','12 km/h downstream, 6 km/h upstream','14 km/h downstream, 8 km/h upstream'],c:1,e:'Downstream speed = 10+2 = 12 km/h. Upstream speed = 10-2 = 8 km/h.'},
-      {q:'A number 200 is increased by 20%. Find the new value.',o:['230','240','250','260'],c:1,e:'New value = 200 x (1+20/100) = 240.'},
-      {q:'Find 3/4 of 240.',o:['170','180','190','200'],c:1,e:'3/4 x 240 = 180.'},
-      {q:'A trader buys an item marked at Rs 1000 at a discount of 20%, then sells it at a profit of 15% on his cost price. Find the selling price.',o:['Rs 880','Rs 920','Rs 960','Rs 1000'],c:1,e:'Cost price = 1000 x (1-20/100) = Rs 800. SP = cost x (1+15/100) = Rs 920.'},
-    ]},
-  ]},
-  {id:'nm2',title:'Set 2',timeLimitSec:1200,sections:[
-    {name:'Quant Sprint',qs:[
-      {q:'An article bought for Rs 250 is sold for Rs 300. Find the profit percentage.',o:['15%','25%','20%','30%'],c:2,e:'Profit = Rs 300-250 = Rs 50. Profit% = 50/250 x 100 = 20%.'},
-      {q:'Find the simple interest on Rs 6000 for 4 years at 6% p.a.',o:['Rs 1240','Rs 1640','Rs 1440','Rs 1840'],c:2,e:'SI = PRT/100 = 6000 x 6 x 4 / 100 = Rs 1440.'},
-      {q:'Find the average of the numbers from 21 to 25 (inclusive).',o:['21','22','23','24'],c:2,e:'Sum = 115, count = 5. Average = 115/5 = 23.'},
-      {q:'A sum of Rs 2000 is divided between X and Y in the ratio 2:3. Find X\'s share.',o:['Rs 700','Rs 800','Rs 900','Rs 1000'],c:1,e:'X\'s share = 2000 x 2/5 = Rs 800.'},
-      {q:'A can complete a work in 12 days and B in 18 days. Working together, how long will they take?',o:['6.2 days','7.2 days','8.2 days','9.2 days'],c:1,e:'LCM(12,18)=36. A\'s rate=3/day, B\'s rate=2/day, combined=5/day. Time=36/5=7.2 days.'},
-      {q:'A train 150 m long crosses a pole in 15 seconds. Find its speed in km/h.',o:['30 km/h','33 km/h','36 km/h','39 km/h'],c:2,e:'Speed = 150/15 = 10 m/s = 10 x 18/5 = 36 km/h.'},
-      {q:'Find 40% of 150.',o:['50','60','70','80'],c:1,e:'40% of 150 = (40/100) x 150 = 60.'},
-      {q:'A shirt is marked at Rs 800 and sold at a discount of 15%. Find the selling price.',o:['Rs 650','Rs 680','Rs 710','Rs 740'],c:1,e:'SP = MP x (1-discount%) = 800 x 0.85 = Rs 680.'},
-      {q:'Three traffic signals change every 6, 9, and 15 seconds respectively. If they all change together at 9:00 AM, after how many seconds will they next change together?',o:['80 seconds','90 seconds','100 seconds','110 seconds'],c:1,e:'LCM(6,9,15) = 90. They will next change together after 90 seconds.'},
-      {q:'Find the area of a rectangle with length 15 units and breadth 10 units.',o:['130 sq units','150 sq units','170 sq units','190 sq units'],c:1,e:'Area = length x breadth = 15 x 10 = 150 sq units.'},
-      {q:'The sum of the ages of A and B is 45 years, and their ages are in the ratio 2:3. Find the age of the older person (B).',o:['23 years','27 years','31 years','35 years'],c:1,e:'Total parts = 2+3=5. Each part = 45/5. B\'s age = 3 parts = 27 years.'},
-      {q:'Suppose a coin is tossed twice. Find the probability of getting exactly one head.',o:['1/4','1/3','1/2','2/3'],c:2,e:'Probability = 2/4 = 1/2.'},
-      {q:'Find the next number in the series: 5, 10, 20, 40, 80, ?',o:['150','155','160','165'],c:2,e:'The pattern is to multiply by 2 each time. Next term = 160.'},
-      {q:'A car covers the first half of a journey at 30 km/h and the second half at 50 km/h. Find the average speed for the entire journey.',o:['32 km/h','37.5 km/h','42 km/h','48 km/h'],c:1,e:'Average speed = 2xy/(x+y) = 2x30x50/(30+50) = 37.5 km/h.'},
-      {q:'Find the compound interest on Rs 8000 for 2 years at 5% p.a. compounded annually.',o:['Rs 720','Rs 820','Rs 920','Rs 1020'],c:1,e:'Amount = 8000 x (1+5/100)² = Rs 8820. CI = Rs 820.'},
-      {q:'A and B invest in a business in the ratio 3:4. If the total profit is Rs 7000, find A\'s share.',o:['Rs 2800','Rs 3000','Rs 3200','Rs 3400'],c:1,e:'A\'s share = 7000 x 3/(3+4) = Rs 3000.'},
-      {q:'The speed of a boat in still water is 12 km/h and the speed of the stream is 3 km/h. Find the downstream and upstream speeds.',o:['13 km/h downstream, 9 km/h upstream','15 km/h downstream, 9 km/h upstream','15 km/h downstream, 7 km/h upstream','17 km/h downstream, 9 km/h upstream'],c:1,e:'Downstream speed = 12+3 = 15 km/h. Upstream speed = 12-3 = 9 km/h.'},
-      {q:'A number 500 is decreased by 10%. Find the new value.',o:['440','450','460','470'],c:1,e:'New value = 500 x (1-10/100) = 450.'},
-      {q:'Find 2/5 of 300.',o:['110','120','130','140'],c:1,e:'2/5 x 300 = 120.'},
-      {q:'A trader buys an item marked at Rs 800 at a discount of 10%, then sells it at a profit of 20% on his cost price. Find the selling price.',o:['Rs 824','Rs 864','Rs 904','Rs 944'],c:1,e:'Cost price = 800 x (1-10/100) = Rs 720. SP = cost x (1+20/100) = Rs 864.'},
-    ]},
-  ]},
-  {id:'nm3',title:'Set 3',timeLimitSec:1200,sections:[
-    {name:'Quant Sprint',qs:[
-      {q:'An article bought for Rs 600 is sold for Rs 660. Find the profit percentage.',o:['5%','15%','10%','20%'],c:2,e:'Profit = Rs 660-600 = Rs 60. Profit% = 60/600 x 100 = 10%.'},
-      {q:'Find the simple interest on Rs 4000 for 2 years at 10% p.a.',o:['Rs 600','Rs 1000','Rs 800','Rs 1200'],c:2,e:'SI = PRT/100 = 4000 x 10 x 2 / 100 = Rs 800.'},
-      {q:'Find the average of the numbers from 31 to 35 (inclusive).',o:['31','32','33','34'],c:2,e:'Sum = 165, count = 5. Average = 165/5 = 33.'},
-      {q:'A sum of Rs 3500 is divided between X and Y in the ratio 4:3. Find X\'s share.',o:['Rs 1900','Rs 2000','Rs 2100','Rs 2200'],c:1,e:'X\'s share = 3500 x 4/7 = Rs 2000.'},
-      {q:'A can complete a work in 8 days and B in 24 days. Working together, how long will they take?',o:['5.0 days','6 days','7.0 days','8.0 days'],c:1,e:'LCM(8,24)=24. A\'s rate=3/day, B\'s rate=1/day, combined=4/day. Time=24/4=6 days.'},
-      {q:'A train 180 m long crosses a pole in 12 seconds. Find its speed in km/h.',o:['48 km/h','51 km/h','54 km/h','57 km/h'],c:2,e:'Speed = 180/12 = 15 m/s = 15 x 18/5 = 54 km/h.'},
-      {q:'Find 15% of 600.',o:['80','90','100','110'],c:1,e:'15% of 600 = (15/100) x 600 = 90.'},
-      {q:'A shirt is marked at Rs 1200 and sold at a discount of 20%. Find the selling price.',o:['Rs 930','Rs 960','Rs 990','Rs 1020'],c:1,e:'SP = MP x (1-discount%) = 1200 x 0.80 = Rs 960.'},
-      {q:'Three traffic signals change every 10, 15, and 20 seconds respectively. If they all change together at 9:00 AM, after how many seconds will they next change together?',o:['50 seconds','60 seconds','70 seconds','80 seconds'],c:1,e:'LCM(10,15,20) = 60. They will next change together after 60 seconds.'},
-      {q:'Find the area of a rectangle with length 20 units and breadth 12 units.',o:['220 sq units','240 sq units','260 sq units','280 sq units'],c:1,e:'Area = length x breadth = 20 x 12 = 240 sq units.'},
-      {q:'The sum of the ages of A and B is 56 years, and their ages are in the ratio 3:4. Find the age of the older person (B).',o:['28 years','32 years','36 years','40 years'],c:1,e:'Total parts = 3+4=7. Each part = 56/7. B\'s age = 4 parts = 32 years.'},
-      {q:'Suppose a card is drawn from a pack of 52. Find the probability that it is a queen.',o:['1/13','1/12','1/10','1/8'],c:0,e:'Probability = 4/52 = 1/13.'},
-      {q:'Find the next number in the series: 2, 4, 8, 16, 32, ?',o:['54','59','64','69'],c:2,e:'The pattern is to multiply by 2 each time. Next term = 64.'},
-      {q:'A car covers the first half of a journey at 50 km/h and the second half at 75 km/h. Find the average speed for the entire journey.',o:['55 km/h','60 km/h','65 km/h','70 km/h'],c:1,e:'Average speed = 2xy/(x+y) = 2x50x75/(50+75) = 60 km/h.'},
-      {q:'Find the compound interest on Rs 10000 for 2 years at 8% p.a. compounded annually.',o:['Rs 1564','Rs 1664','Rs 1764','Rs 1864'],c:1,e:'Amount = 10000 x (1+8/100)² = Rs 11664. CI = Rs 1664.'},
-      {q:'A and B invest in a business in the ratio 4:5. If the total profit is Rs 9000, find A\'s share.',o:['Rs 3800','Rs 4000','Rs 4200','Rs 4400'],c:1,e:'A\'s share = 9000 x 4/(4+5) = Rs 4000.'},
-      {q:'The speed of a boat in still water is 15 km/h and the speed of the stream is 5 km/h. Find the downstream and upstream speeds.',o:['18 km/h downstream, 10 km/h upstream','20 km/h downstream, 10 km/h upstream','20 km/h downstream, 8 km/h upstream','22 km/h downstream, 10 km/h upstream'],c:1,e:'Downstream speed = 15+5 = 20 km/h. Upstream speed = 15-5 = 10 km/h.'},
-      {q:'A number 150 is increased by 50%. Find the new value.',o:['215','225','235','245'],c:1,e:'New value = 150 x (1+50/100) = 225.'},
-      {q:'Find 5/8 of 320.',o:['190','200','210','220'],c:1,e:'5/8 x 320 = 200.'},
-      {q:'A trader buys an item marked at Rs 1200 at a discount of 25%, then sells it at a profit of 10% on his cost price. Find the selling price.',o:['Rs 950','Rs 990','Rs 1030','Rs 1070'],c:1,e:'Cost price = 1200 x (1-25/100) = Rs 900. SP = cost x (1+10/100) = Rs 990.'},
-    ]},
-  ]},
-  {id:'nm4',title:'Set 4',timeLimitSec:1200,sections:[
-    {name:'Quant Sprint',qs:[
-      {q:'An article bought for Rs 800 is sold for Rs 920. Find the profit percentage.',o:['10%','20%','15%','25%'],c:2,e:'Profit = Rs 920-800 = Rs 120. Profit% = 120/800 x 100 = 15%.'},
-      {q:'Find the simple interest on Rs 9000 for 4 years at 5% p.a.',o:['Rs 1600','Rs 2000','Rs 1800','Rs 2200'],c:2,e:'SI = PRT/100 = 9000 x 5 x 4 / 100 = Rs 1800.'},
-      {q:'Find the average of the numbers from 41 to 45 (inclusive).',o:['41','42','43','44'],c:2,e:'Sum = 215, count = 5. Average = 215/5 = 43.'},
-      {q:'A sum of Rs 4800 is divided between X and Y in the ratio 5:7. Find X\'s share.',o:['Rs 1900','Rs 2000','Rs 2100','Rs 2200'],c:1,e:'X\'s share = 4800 x 5/12 = Rs 2000.'},
-      {q:'A can complete a work in 20 days and B in 30 days. Working together, how long will they take?',o:['11.0 days','12 days','13.0 days','14.0 days'],c:1,e:'LCM(20,30)=60. A\'s rate=3/day, B\'s rate=2/day, combined=5/day. Time=60/5=12 days.'},
-      {q:'A train 240 m long crosses a pole in 16 seconds. Find its speed in km/h.',o:['48 km/h','51 km/h','54 km/h','57 km/h'],c:2,e:'Speed = 240/16 = 15 m/s = 15 x 18/5 = 54 km/h.'},
-      {q:'Find 60% of 350.',o:['200','210','220','230'],c:1,e:'60% of 350 = (60/100) x 350 = 210.'},
-      {q:'A shirt is marked at Rs 650 and sold at a discount of 12%. Find the selling price.',o:['Rs 542','Rs 572','Rs 602','Rs 632'],c:1,e:'SP = MP x (1-discount%) = 650 x 0.88 = Rs 572.'},
-      {q:'Three traffic signals change every 12, 16, and 24 seconds respectively. If they all change together at 9:00 AM, after how many seconds will they next change together?',o:['38 seconds','48 seconds','58 seconds','68 seconds'],c:1,e:'LCM(12,16,24) = 48. They will next change together after 48 seconds.'},
-      {q:'Find the area of a rectangle with length 18 units and breadth 9 units.',o:['142 sq units','162 sq units','182 sq units','202 sq units'],c:1,e:'Area = length x breadth = 18 x 9 = 162 sq units.'},
-      {q:'The sum of the ages of A and B is 63 years, and their ages are in the ratio 4:5. Find the age of the older person (B).',o:['31 years','35 years','39 years','43 years'],c:1,e:'Total parts = 4+5=9. Each part = 63/9. B\'s age = 5 parts = 35 years.'},
-      {q:'Suppose a bag has 4 red and 6 blue balls. Find the probability of drawing a red ball.',o:['1/5','1/4','2/5','3/5'],c:2,e:'Probability = 4/10 = 2/5.'},
-      {q:'Find the next number in the series: 100, 90, 80, 70, 60, ?',o:['40','45','50','55'],c:2,e:'The pattern is to subtract 10 each time. Next term = 50.'},
-      {q:'A car covers the first half of a journey at 45 km/h and the second half at 60 km/h. Find the average speed for the entire journey.',o:['46 km/h','51.4 km/h','56 km/h','61 km/h'],c:1,e:'Average speed = 2xy/(x+y) = 2x45x60/(45+60) = 51.4 km/h.'},
-      {q:'Find the compound interest on Rs 6000 for 2 years at 12% p.a. compounded annually.',o:['Rs 1426','Rs 1526','Rs 1626','Rs 1726'],c:1,e:'Amount = 6000 x (1+12/100)² = Rs 7526. CI = Rs 1526.'},
-      {q:'A and B invest in a business in the ratio 2:5. If the total profit is Rs 8400, find A\'s share.',o:['Rs 2200','Rs 2400','Rs 2600','Rs 2800'],c:1,e:'A\'s share = 8400 x 2/(2+5) = Rs 2400.'},
-      {q:'The speed of a boat in still water is 8 km/h and the speed of the stream is 2 km/h. Find the downstream and upstream speeds.',o:['8 km/h downstream, 6 km/h upstream','10 km/h downstream, 6 km/h upstream','10 km/h downstream, 4 km/h upstream','12 km/h downstream, 6 km/h upstream'],c:1,e:'Downstream speed = 8+2 = 10 km/h. Upstream speed = 8-2 = 6 km/h.'},
-      {q:'A number 400 is decreased by 25%. Find the new value.',o:['290','300','310','320'],c:1,e:'New value = 400 x (1-25/100) = 300.'},
-      {q:'Find 3/7 of 420.',o:['170','180','190','200'],c:1,e:'3/7 x 420 = 180.'},
-      {q:'A trader buys an item marked at Rs 600 at a discount of 15%, then sells it at a profit of 25% on his cost price. Find the selling price.',o:['Rs 598','Rs 638','Rs 678','Rs 718'],c:1,e:'Cost price = 600 x (1-15/100) = Rs 510. SP = cost x (1+25/100) = Rs 638.'},
     ]},
   ]},
 ];
