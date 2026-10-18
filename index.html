@@ -481,6 +481,7 @@ document.addEventListener('click', function(e) {
   <div class="main-tab t-green" onclick="switchTab('stories',this)">📖 My Stories</div>
   <div class="main-tab t-navy2" onclick="switchTab('targets',this)">🏆 Company Targets</div>
   <div class="main-tab" onclick="switchTab('news',this)" style="color:#0E7490">📰 Stay Current</div>
+  <div class="main-tab t-green" onclick="switchTab('brandscan',this)">🔬 Brandscan TL</div>
   <div class="main-tab" onclick="switchTab('sib',this)" style="color:#991B1B">📝 Aptitude Tests</div>
 </div>
 
@@ -618,154 +619,6 @@ document.addEventListener('click', function(e) {
 
   </div>
 </div>
-
-    <!-- BRANDSCAN TEAM LEAD INTERVIEW PREP -->
-    <div class="ip-section">
-      <div class="ip-head" style="background:#F0FDF4">
-        <div class="ip-num" style="background:#166534">&#x1F4CA;</div>
-        <div class="ip-title" style="color:#166534">Brandscan Team Lead — Interview Prep</div>
-      </div>
-      <div style="padding:14px 16px 4px;font-size:13px;color:var(--muted);border-bottom:1px solid var(--border)">
-        Brandscan is TAPMI\'s flagship brand consulting programme. Teams of students are allocated to real brand clients and deliver research-backed recommendations. The Team Lead role is selected through a chair interview. The interview tests two things: your ability to work with data and research tools to generate insight, and your ability to translate those insights into clear, actionable client recommendations.
-      </div>
-
-      <!-- WHAT THE INTERVIEW IS ACTUALLY TESTING -->
-      <div style="padding:14px 16px 6px">
-        <div class="sh">What the Interview Is Testing</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
-          <div style="background:#EFF6FF;border-radius:8px;padding:12px 14px">
-            <div style="font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px">Data & Tools Proficiency</div>
-            <ul style="font-size:12.5px;padding-left:16px;margin:0;line-height:1.7">
-              <li>Can you clean, structure, and analyse raw survey or secondary data?</li>
-              <li>Do you know which tool fits which job — not just that you\'ve used them?</li>
-              <li>Can you build a coherent story from numbers rather than just report them?</li>
-            </ul>
-          </div>
-          <div style="background:#F0FDF4;border-radius:8px;padding:12px 14px">
-            <div style="font-size:11px;font-weight:700;color:#166534;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px">Client-Facing Insight Generation</div>
-            <ul style="font-size:12.5px;padding-left:16px;margin:0;line-height:1.7">
-              <li>Can you frame an insight as a so-what for a brand manager, not a research summary?</li>
-              <li>Do your recommendations connect to specific actions the client can take?</li>
-              <li>Can you handle a client who pushes back on your data?</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- TOOLS FRAMEWORK -->
-      <div style="padding:0 16px 14px">
-        <div class="sh">The Tool Stack — What Goes Where</div>
-        <p style="font-size:12.5px;color:var(--muted);margin-bottom:10px">The question isn\'t whether you\'ve used these — it\'s whether you can say precisely why you\'d pick one over another for a specific research task. That\'s what signals genuine proficiency.</p>
-        <table class="ctbl" style="width:100%;font-size:12px">
-          <tr><th>Task</th><th>Tool</th><th>Why this one</th></tr>
-          <tr><td>Survey data cleaning &amp; pivot analysis</td><td>Excel / Google Sheets</td><td>Fast, shareable, no code barrier for client handover. Pivot tables handle cross-tabs cleanly.</td></tr>
-          <tr><td>Segmentation, regression, factor analysis</td><td>SPSS / R</td><td>Survey data with 200+ responses needs proper statistical tests. SPSS is the industry standard for marketing research; R for reproducibility.</td></tr>
-          <tr><td>Visualisation &amp; dashboard for client</td><td>Power BI / Tableau</td><td>Clients need to interact with data, not read static tables. Power BI embeds into decks; Tableau for standalone exploratory work.</td></tr>
-          <tr><td>Social listening &amp; brand sentiment</td><td>Brandwatch / Sprout Social / manual scraping</td><td>Structured social data shows what consumers say unprompted — different from survey responses where they\'re answering your frame.</td></tr>
-          <tr><td>Market sizing &amp; secondary research</td><td>Statista / IMARC / Euromonitor + Excel model</td><td>Secondary sources give category benchmarks. The insight is not the number — it\'s what your brand\'s number implies relative to it.</td></tr>
-          <tr><td>Conjoint / MaxDiff analysis</td><td>Qualtrics + R / SPSS</td><td>When the client question is feature prioritisation or pricing — conjoint gives a utility score, not a stated preference that may be wrong.</td></tr>
-          <tr><td>Qualitative coding &amp; theming</td><td>NVivo / manual in Excel</td><td>FGD and IDI transcripts need structured coding. NVivo for large data; manual theming for smaller sets where nuance matters more than speed.</td></tr>
-        </table>
-      </div>
-
-      <!-- INSIGHT FRAMING -->
-      <div style="padding:0 16px 14px">
-        <div class="sh">How to Frame an Insight for a Client</div>
-        <p style="font-size:12.5px;color:var(--muted);margin-bottom:10px">The most common failure in Brandscan-style projects: presenting data summaries instead of insights. A data summary says what happened. An insight says why it matters and what to do.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
-          <div style="background:#FEF2F2;border-radius:8px;padding:12px 14px;border-left:3px solid #DC2626">
-            <div style="font-size:11px;font-weight:700;color:#991B1B;margin-bottom:6px">Data summary (weak)</div>
-            <p style="font-size:12.5px;margin:0;line-height:1.6">"68% of respondents said they were aware of Brand X. Awareness was higher among 18–24 age group (74%) than 25–34 (61%). Purchase intent was 42% overall."</p>
-          </div>
-          <div style="background:#F0FDF4;border-radius:8px;padding:12px 14px;border-left:3px solid #16A34A">
-            <div style="font-size:11px;font-weight:700;color:#166534;margin-bottom:6px">Insight with action (strong)</div>
-            <p style="font-size:12.5px;margin:0;line-height:1.6">"Brand X has an awareness-to-intent gap of 26 percentage points — unusually wide for this category. The 18–24 cohort knows the brand but isn\'t converting. This is a brand image problem, not a reach problem. Increasing media spend won\'t fix it. The intervention is in how the brand is positioned to this cohort, not how loudly."</p>
-          </div>
-        </div>
-        <div class="qbox">The format that works: <strong>Observation</strong> (what the data shows) → <strong>So-what</strong> (what this means for the brand) → <strong>Intervention</strong> (what the client should do differently). Every insight the team presents to the client should pass this three-part test.
-        </div>
-      </div>
-
-      <!-- INTERVIEW Q&A -->
-      <div style="padding:0 16px 14px">
-        <div class="sh">Interview Q&amp;A — Team Lead Role</div>
-
-        <div class="qa-item" style="border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden">
-          <div class="qa-q" onclick="toggleQA(this)" style="background:#F9FAFB">
-            Walk me through how you\'d structure a brand health study for a client you\'ve just been allocated to. <span style="font-size:10px;color:var(--muted);font-weight:400">Framework</span>
-          </div>
-          <div class="qa-a" style="display:none;padding:12px 16px;font-size:13px;line-height:1.7">
-            First two days: understand what the client already knows. Ask for any past research, category reports, or campaign data. You don\'t want to resurface what they already have — you want to add to it. Then define the diagnostic questions: awareness and salience, brand associations, purchase triggers and barriers, and competitive perception. These become the skeleton of the survey. For a 4–6 week Brandscan project, I\'d run a structured survey of 150–200 respondents in the relevant TG, supplemented by 4–6 in-depth interviews to get texture the survey won\'t capture. Secondary data fills the category context — market size, growth, key competitors\'  positioning. The analysis sequence: clean and code the data first, run frequencies and cross-tabs to find the pattern, then go deeper on the segments that show an anomaly. The anomaly is almost always where the insight lives. Final output: not a report — a recommendation deck with 3–4 specific interventions ranked by feasibility and impact.
-          </div>
-        </div>
-
-        <div class="qa-item" style="border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden">
-          <div class="qa-q" onclick="toggleQA(this)" style="background:#F9FAFB">
-            A client looks at your data and says "this doesn\'t match what we see in our internal numbers." How do you handle it? <span style="font-size:10px;color:var(--muted);font-weight:400">Client Handling</span>
-          </div>
-          <div class="qa-a" style="display:none;padding:12px 16px;font-size:13px;line-height:1.7">
-            First, take it seriously rather than defending the data. Internal numbers and primary research often measure different things — sales data shows what people bought, survey data shows what people think and feel. Both can be right simultaneously. I\'d ask them to share the specific internal metric they\'re referring to, and then try to reconcile: are we measuring the same construct? Different geographies or time periods? Different consumer segments? If there\'s a genuine contradiction after that reconciliation, I\'d present both data points to the client alongside a hypothesis for why they diverge — that divergence is often itself the most interesting finding. What I would not do: quietly adjust the analysis to match their expectation. The value of external research is precisely that it\'s independent.
-          </div>
-        </div>
-
-        <div class="qa-item" style="border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden">
-          <div class="qa-q" onclick="toggleQA(this)" style="background:#F9FAFB">
-            What\'s the difference between a finding and an insight? Give me an example. <span style="font-size:10px;color:var(--muted);font-weight:400">Research Thinking</span>
-          </div>
-          <div class="qa-a" style="display:none;padding:12px 16px;font-size:13px;line-height:1.7">
-            A finding is what the data shows. An insight is what it means for the brand and what should change as a result. Example: finding — "women aged 25–34 rate the brand significantly lower on \'modern and relevant\' than men in the same cohort." That is a finding. The insight is: "Brand X\'s communication has been skewing male in its imagery and aspirational cues. Women in this cohort aren\'t rejecting the product — they\'re not seeing themselves in the brand. The intervention is in the visual and tonality direction of the next campaign, not in distribution or pricing." The finding lives in the data. The insight requires you to go one step further and connect it to something the client can actually change.
-          </div>
-        </div>
-
-        <div class="qa-item" style="border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden">
-          <div class="qa-q" onclick="toggleQA(this)" style="background:#F9FAFB">
-            How do you manage a team where different members have very different data skill levels? <span style="font-size:10px;color:var(--muted);font-weight:400">Leadership</span>
-          </div>
-          <div class="qa-a" style="display:none;padding:12px 16px;font-size:13px;line-height:1.7">
-            Map the work to the person, not the other way around. In a 4–5 person Brandscan team, not everyone needs to run SPSS. What you need is: one person who owns data integrity and analysis, one who owns client communication and insight framing, one who owns the deck and storytelling, and one who owns fieldwork and primary data collection. The lead\'s job is to make sure those four tracks don\'t operate in silos — the analysis person and the deck person need to be in the same room when the story is being shaped, otherwise you get technically correct analysis in a badly told deck. For the skill gap specifically: I\'d pair a lower-skill member with a higher-skill one on a task rather than reassigning entirely. The project timeline is tight but the learning is part of the value.
-          </div>
-        </div>
-
-        <div class="qa-item" style="border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden">
-          <div class="qa-q" onclick="toggleQA(this)" style="background:#F9FAFB">
-            You have 4 weeks, a team of 5, and a brand client in a category you\'ve never studied. What\'s your week-by-week plan? <span style="font-size:10px;color:var(--muted);font-weight:400">Project Management</span>
-          </div>
-          <div class="qa-a" style="display:none;padding:12px 16px;font-size:13px;line-height:1.7">
-            Week 1 — Diagnose and design: Client brief deep-dive, secondary research on the category, competitor mapping, and survey design. Survey goes live by end of week. Week 2 — Field and collect: Primary data collection (survey + 4–6 IDIs). Simultaneously, pull all available secondary data. Do not wait for full data to start reading patterns. Week 3 — Analyse and insight-build: Data cleaning, cross-tabs, segmentation. Weekly check-in with client on preliminary directions — not final findings, but hypotheses. This prevents a week-4 surprise where the client says "that\'s not what we asked for." Week 4 — Refine and present: Final recommendations deck, rehearsal within the team, client presentation. The deck structure: situation (what we studied and why) → findings (3–4 key patterns) → insights (the so-what for each) → interventions (ranked by impact and feasibility). No more than 12 slides.
-          </div>
-        </div>
-
-        <div class="qa-item" style="border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden">
-          <div class="qa-q" onclick="toggleQA(this)" style="background:#F9FAFB">
-            What does good data visualisation look like in a client context, versus an academic one? <span style="font-size:10px;color:var(--muted);font-weight:400">Tools & Communication</span>
-          </div>
-          <div class="qa-a" style="display:none;padding:12px 16px;font-size:13px;line-height:1.7">
-            In an academic context, completeness is the standard — you show all the data and let the reader draw conclusions. In a client context, clarity is the standard — the chart should make one point and make it instantly. A brand manager is not going to read a table with 14 rows. The practical implications: use fewer chart types (bar for comparison, line for trend, scatter for correlation — pick the one that shows your point most directly). Label the insight in the chart title, not in a caption below. "Brand X awareness gap is widest in the 25–34 cohort" is a chart title; "Awareness by age group" is a label. Colour should emphasise the one bar or line that matters. Everything else should be grey. If your visualisation needs a 3-sentence explanation to be understood, it hasn\'t been designed for a client — redesign it.
-          </div>
-        </div>
-
-      </div>
-
-      <!-- WHAT STRONG LOOKS LIKE -->
-      <div style="padding:0 16px 16px">
-        <div class="sh">What a Strong Team Lead Looks Like in the Room</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
-          <div style="background:#F0FDF4;border-radius:8px;padding:11px 13px">
-            <div style="font-size:11px;font-weight:700;color:#166534;margin-bottom:5px">On data</div>
-            <p style="font-size:12px;margin:0;line-height:1.6">Doesn\'t just say "I used SPSS." Says "I ran a factor analysis on the 12 brand attribute items to collapse them into 3 underlying dimensions — that\'s what gave us the perceptual map."</p>
-          </div>
-          <div style="background:#EFF6FF;border-radius:8px;padding:11px 13px">
-            <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:5px">On insight</div>
-            <p style="font-size:12px;margin:0;line-height:1.6">Connects every finding to a brand decision. The client should leave the room knowing exactly what to do differently, not just what the data said.</p>
-          </div>
-          <div style="background:#FFF7ED;border-radius:8px;padding:11px 13px">
-            <div style="font-size:11px;font-weight:700;color:#92400E;margin-bottom:5px">On leadership</div>
-            <p style="font-size:12px;margin:0;line-height:1.6">Takes responsibility for the quality of the full output, not just their own section. If the deck isn\'t working, fixes it — doesn\'t point to who owns that slide.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
 
 
 <!-- TAB 7: MY STORIES -->
@@ -910,6 +763,399 @@ document.addEventListener('click', function(e) {
         <button class="news-link" onclick="(window.top||window).open('https://news.google.com/search?q=site:businesstoday.in+marketing+brands+FMCG&hl=en-IN','_blank')">Open Business Today — Marketing &#x2192;</button>
       </div>
     </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TAB 11: BRANDSCAN TEAM LEAD PREP -->
+<div id="tab-brandscan" class="tab-content">
+  <div class="content">
+
+    <!-- INTRO BANNER -->
+    <div style="background:linear-gradient(135deg,#F0FDF4 0%,#DCFCE7 100%);border:1px solid #BBF7D0;border-radius:10px;padding:16px 20px;margin-bottom:18px">
+      <div style="font-size:15px;font-weight:700;color:#166534;margin-bottom:5px">🔬 Brandscan — Team Lead Interview Prep</div>
+      <p style="font-size:13px;color:#14532D;margin:0;line-height:1.6">Brandscan is TAPMI's flagship brand consulting programme. Student teams are allocated to real brand clients and deliver research-backed recommendations over 6–8 weeks. The Team Lead role is selected through a chair interview. Two things are being tested: your <strong>data tool proficiency</strong> (can you handle and interpret research data?) and your <strong>insight-to-action ability</strong> (can you translate what the data says into decisions a brand manager can act on?).</p>
+    </div>
+
+    <!-- WHAT THE CHAIR IS TESTING -->
+    <div class="ip-section">
+      <div class="ip-head" style="background:#F0FDF4">
+        <div class="ip-num" style="background:#166534">&#x1F3AF;</div>
+        <div class="ip-title" style="color:#166534">What the Chair Interview Is Testing</div>
+      </div>
+      <div style="padding:14px 16px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div style="background:#EFF6FF;border-radius:8px;padding:14px 16px">
+            <div style="font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Dimension 1 — Data & Tools</div>
+            <ul style="font-size:12.5px;padding-left:16px;margin:0;line-height:1.8">
+              <li>Do you know which tool is right for which research task — not just that you\'ve used them?</li>
+              <li>Can you clean, structure and analyse raw survey or secondary data?</li>
+              <li>Can you build a coherent story from numbers rather than just report them?</li>
+              <li>Can you design a research instrument (questionnaire, discussion guide)?</li>
+            </ul>
+          </div>
+          <div style="background:#F0FDF4;border-radius:8px;padding:14px 16px">
+            <div style="font-size:11px;font-weight:700;color:#166534;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Dimension 2 — Client-Facing Insight</div>
+            <ul style="font-size:12.5px;padding-left:16px;margin:0;line-height:1.8">
+              <li>Can you frame an insight as a so-what for a brand manager, not just a research summary?</li>
+              <li>Do your recommendations connect to specific, actionable interventions?</li>
+              <li>Can you handle a client who pushes back on your data or your conclusion?</li>
+              <li>Can you prioritise — not every finding matters equally?</li>
+            </ul>
+          </div>
+        </div>
+        <div class="qbox" style="margin-top:12px">The role of the Team Lead is not to be the best analyst on the team. It is to ensure the team produces work that is analytically sound <em>and</em> that the client actually understands and acts on. Both halves matter.
+        </div>
+      </div>
+    </div>
+
+    <!-- TOOL STACK -->
+    <div class="ip-section">
+      <div class="ip-head" style="background:#EFF6FF">
+        <div class="ip-num" style="background:#1D4ED8">&#x1F6E0;</div>
+        <div class="ip-title" style="color:#1E3A5F">The Research Tool Stack — What, When, and Why</div>
+      </div>
+      <div style="padding:14px 16px">
+        <p style="font-size:12.5px;color:var(--muted);margin-bottom:12px">The question in the interview is never just "have you used this?" It is "why would you pick this tool for this specific task over the alternatives?" That\'s what separates someone who has opened Tableau from someone who actually does research.</p>
+
+        <div style="font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Quantitative Research</div>
+        <table class="ctbl" style="width:100%;font-size:12px;margin-bottom:16px">
+          <tr><th style="width:22%">Tool</th><th style="width:30%">What it does well</th><th style="width:48%">When to use it — and the honest limits</th></tr>
+          <tr>
+            <td><strong>Excel / Google Sheets</strong></td>
+            <td>Survey data cleaning, pivot tables, cross-tabs, basic charting, data dictionaries</td>
+            <td>Default starting point for any dataset under ~5,000 rows. Fast, shareable, no code barrier for client handover. Pivot tables handle cross-tabs cleanly. <em>Limit:</em> doesn\'t scale to large datasets and can\'t run proper statistical tests.</td>
+          </tr>
+          <tr>
+            <td><strong>SPSS</strong></td>
+            <td>Frequencies, cross-tabs, regression, factor analysis, cluster analysis, reliability (Cronbach\'s alpha)</td>
+            <td>Industry standard for marketing research. Use when you need to confirm that a pattern is statistically significant rather than just visually apparent. Factor analysis on brand attribute batteries, cluster analysis for segmentation. <em>Limit:</em> output is not client-ready — needs formatting before it goes into a deck.</td>
+          </tr>
+          <tr>
+            <td><strong>R</strong></td>
+            <td>Everything SPSS does, plus conjoint (mlogit), MaxDiff (support.BWS), text mining, reproducible pipelines</td>
+            <td>Use when the analysis needs to be reproducible and documented, or when SPSS doesn\'t have the method (e.g. hierarchical Bayesian conjoint). <em>Limit:</em> steeper learning curve; overkill for a 200-row survey if SPSS is available.</td>
+          </tr>
+          <tr>
+            <td><strong>Qualtrics</strong></td>
+            <td>Survey design, skip logic, quota control, conjoint/MaxDiff modules, panel recruitment</td>
+            <td>For primary research where the questionnaire has branching logic or advanced methods. Conjoint and MaxDiff are built in. <em>Limit:</em> costs money; for simple surveys, Google Forms + SPSS is cheaper.</td>
+          </tr>
+        </table>
+
+        <div style="font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Qualitative Research</div>
+        <table class="ctbl" style="width:100%;font-size:12px;margin-bottom:16px">
+          <tr><th style="width:22%">Tool</th><th style="width:30%">What it does well</th><th style="width:48%">When to use it — and the honest limits</th></tr>
+          <tr>
+            <td><strong>NVivo</strong></td>
+            <td>Coding transcripts, theming FGD/IDI data, co-occurrence matrices, word frequency</td>
+            <td>When you have 8+ IDI transcripts or 3+ FGD transcripts and need structured, defensible coding. <em>Limit:</em> not faster than manual for small sets; the output needs interpretation, it doesn\'t generate insights on its own.</td>
+          </tr>
+          <tr>
+            <td><strong>Manual coding in Excel</strong></td>
+            <td>Line-by-line coding, theme tallying, verbatim tracking</td>
+            <td>For 4–6 IDIs where nuance matters more than speed. Use a separate column per theme, highlight verbatims, build a theme frequency table. Often produces richer output than NVivo for small datasets because you stay closer to the text. <em>Limit:</em> doesn\'t scale past ~8 transcripts before it becomes unwieldy.</td>
+          </tr>
+        </table>
+
+        <div style="font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Visualisation & Dashboards</div>
+        <table class="ctbl" style="width:100%;font-size:12px;margin-bottom:16px">
+          <tr><th style="width:22%">Tool</th><th style="width:30%">What it does well</th><th style="width:48%">When to use it — and the honest limits</th></tr>
+          <tr>
+            <td><strong>Power BI</strong></td>
+            <td>Interactive dashboards, slicers, DAX calculations, embedding into PowerPoint</td>
+            <td>When the client needs to explore the data themselves — filter by region, segment, time. Embeds into decks. <em>Limit:</em> DAX has a learning curve; overkill if the client only needs a static summary.</td>
+          </tr>
+          <tr>
+            <td><strong>Tableau</strong></td>
+            <td>Exploratory visual analytics, perceptual maps, scatter plots, cross-filters</td>
+            <td>Better than Power BI for exploratory work during analysis; less practical for the client handover. Use during the analysis phase to find patterns, then rebuild key charts in PowerPoint or Power BI for the final deck. <em>Limit:</em> standalone file, not easy to embed.</td>
+          </tr>
+          <tr>
+            <td><strong>Python (seaborn / matplotlib / plotly)</strong></td>
+            <td>Custom charts, reproducible visualisation pipelines, large datasets</td>
+            <td>When the chart type doesn\'t exist in Excel or Power BI (e.g. a dendrogram from cluster analysis, a conjoint utility plot). <em>Limit:</em> takes longer to produce; not practical for a 4-week project unless the team has Python fluency.</td>
+          </tr>
+        </table>
+
+        <div style="font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Secondary Research & Brand Monitoring</div>
+        <table class="ctbl" style="width:100%;font-size:12px;margin-bottom:4px">
+          <tr><th style="width:22%">Tool</th><th style="width:30%">What it does well</th><th style="width:48%">When to use it — and the honest limits</th></tr>
+          <tr>
+            <td><strong>Statista / IMARC / Euromonitor</strong></td>
+            <td>Market size, growth rates, category benchmarks, competitor revenue</td>
+            <td>Use to establish the category context before designing primary research. The insight is not the number — it\'s what your brand\'s number implies relative to the category. <em>Limit:</em> behind paywalls; check TAPMI library access.</td>
+          </tr>
+          <tr>
+            <td><strong>Google Trends</strong></td>
+            <td>Search interest over time, regional interest, related queries</td>
+            <td>Free and underused. Excellent for understanding whether consumer interest in a category or brand is growing or declining, and what adjacent searches reveal about purchase intent. <em>Limit:</em> index, not absolute volume; can\'t drill below state level in India.</td>
+          </tr>
+          <tr>
+            <td><strong>Brandwatch / Sprout Social / manual scraping</strong></td>
+            <td>Unstructured consumer voice: what people say about a brand unprompted, sentiment over time</td>
+            <td>Valuable precisely because it\'s unsolicited — different from survey responses where the consumer is answering your frame. Even a manual scrape of Reddit/Quora posts for the brand gives texture. <em>Limit:</em> tools cost money; manual scraping is time-intensive.</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- INSIGHT FRAMING -->
+    <div class="ip-section">
+      <div class="ip-head amber">
+        <div class="ip-num">&#x1F4A1;</div>
+        <div class="ip-title">From Data to Client Recommendation — The Framework</div>
+      </div>
+      <div style="padding:14px 16px">
+        <p style="font-size:12.5px;color:var(--muted);margin-bottom:12px">The most common failure in projects like Brandscan: presenting data summaries instead of insights. A data summary tells the client what the data showed. An insight tells them what it means for the brand and what should change as a result.</p>
+
+        <!-- Three-step model -->
+        <div style="display:flex;align-items:stretch;gap:0;margin-bottom:14px;border-radius:8px;overflow:hidden;border:1px solid var(--border)">
+          <div style="flex:1;background:#EFF6FF;padding:14px 16px">
+            <div style="font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px">Step 1 — Observation</div>
+            <p style="font-size:12.5px;margin:0;line-height:1.6">What does the data actually show? State it precisely. Include the number, the segment, and the direction.</p>
+            <div style="margin-top:8px;font-size:11.5px;color:#1D4ED8;background:#DBEAFE;border-radius:5px;padding:7px 9px;line-height:1.5">"68% of TG is aware of Brand X. Awareness drops to 61% in the 25–34 cohort vs 74% in 18–24. Purchase intent is 42% overall."</div>
+          </div>
+          <div style="width:2px;background:var(--border)"></div>
+          <div style="flex:1;background:#FFF7ED;padding:14px 16px">
+            <div style="font-size:11px;font-weight:700;color:#92400E;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px">Step 2 — So-What</div>
+            <p style="font-size:12.5px;margin:0;line-height:1.6">What does this mean for the brand? What is the underlying problem or opportunity it reveals?</p>
+            <div style="margin-top:8px;font-size:11.5px;color:#92400E;background:#FEF3C7;border-radius:5px;padding:7px 9px;line-height:1.5">"There is a 26-point awareness-to-intent gap — unusually wide for this category. The 18–24 cohort knows the brand but isn't converting. This is a brand image problem, not a reach problem."</div>
+          </div>
+          <div style="width:2px;background:var(--border)"></div>
+          <div style="flex:1;background:#F0FDF4;padding:14px 16px">
+            <div style="font-size:11px;font-weight:700;color:#166534;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px">Step 3 — Intervention</div>
+            <p style="font-size:12.5px;margin:0;line-height:1.6">What specifically should the client do differently? Rank by feasibility and likely impact.</p>
+            <div style="margin-top:8px;font-size:11.5px;color:#166534;background:#DCFCE7;border-radius:5px;padding:7px 9px;line-height:1.5">"More media spend won\'t fix this. The intervention is in the visual and tonality direction of the next campaign — not in reach, but in resonance with this cohort."</div>
+          </div>
+        </div>
+
+        <div style="font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px">Types of Interventions You Can Recommend</div>
+        <table class="ctbl" style="width:100%;font-size:12px">
+          <tr><th>Intervention type</th><th>What it addresses</th><th>Example</th></tr>
+          <tr><td>Communication / creative direction</td><td>Brand perception, salience, association</td><td>"Shift tonality to self-efficacy framing for the 25+ cohort — current creative skews aspirational-youth."</td></tr>
+          <tr><td>Channel / media mix</td><td>Reach, frequency, platform fit</td><td>"Brand X\'s TG over-indexes on YouTube and Podcasts, not Instagram. Current media spend allocation is mismatched."</td></tr>
+          <tr><td>Product / packaging signal</td><td>Shelf standout, perceived quality, trial barrier</td><td>"Premium variant packaging is visually similar to the base SKU. It\'s suppressing perceived value before the consumer reads the label."</td></tr>
+          <tr><td>Distribution / availability</td><td>Conversion, trial rate</td><td>"74% awareness with 42% purchase intent suggests brand equity isn\'t the gap — availability in Tier 2 modern trade may be."</td></tr>
+          <tr><td>Pricing / promotion</td><td>Value perception, loyalty, occasion expansion</td><td>"Brand X loses significantly on value-for-money vs. Competitor Y in the 18–24 segment. A bridge SKU at ₹129 would close this."</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Q&A BANK -->
+    <div class="ip-section">
+      <div class="ip-head amber">
+        <div class="ip-num">Q</div>
+        <div class="ip-title">Interview Q&amp;A Bank — Brandscan Chair</div>
+      </div>
+      <div style="padding:14px 16px">
+        <p style="font-size:12.5px;color:var(--muted);margin-bottom:12px">These questions mirror what a Brandscan chair typically asks a Team Lead candidate. Each answer below is a model — adapt the specifics to any brand you might be allocated to.</p>
+
+        <!-- Q1 -->
+        <div class="qa-item" style="border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden">
+          <div class="qa-q" onclick="toggleQA(this)" style="background:#F9FAFB">
+            Walk me through how you\'d structure a brand health study for a client you\'ve just been allocated to. <span style="font-size:10px;color:var(--muted);font-weight:400">Research Framework</span>
+          </div>
+          <div class="qa-a" style="display:none;padding:14px 16px;font-size:13px;line-height:1.7">
+            <p style="margin:0 0 8px"><strong>Opening move — understand what already exists.</strong> Before designing a single survey question, ask the client for any past research, category reports, campaign data, or brand tracking they have. You want to add to the knowledge base, not duplicate it. This also signals to the client that you\'re efficient, not just busy.</p>
+            <p style="margin:0 0 8px"><strong>Diagnostic framework — four pillars of brand health:</strong></p>
+            <ul style="margin:0 0 8px;padding-left:18px;line-height:1.8">
+              <li><strong>Awareness & Salience</strong> — Unaided recall, aided awareness, top-of-mind share. Not just "do they know the brand" but "does it come to mind in the purchase moment?"</li>
+              <li><strong>Brand Associations</strong> — What attributes and emotions the brand owns in the consumer\'s mind. Use a multi-item attribute battery, then factor-analyse to find the underlying dimensions.</li>
+              <li><strong>Purchase Funnel</strong> — Awareness → Consideration → Trial → Repeat. The gap between any two stages is where the intervention lives.</li>
+              <li><strong>Competitive Benchmarking</strong> — How does the brand sit on key attributes relative to its 2–3 closest competitors? A perceptual map built from the factor scores makes this visual.</li>
+            </ul>
+            <p style="margin:0 0 8px"><strong>Research design:</strong> Structured survey (150–200 respondents in the relevant TG), plus 4–6 in-depth interviews to get texture the survey won\'t capture. Interviews tell you the why behind the what. Survey goes live by end of week 1.</p>
+            <p style="margin:0 0 8px"><strong>Analysis sequence:</strong> Clean and code the data first. Run frequencies and cross-tabs to find patterns. Go deeper on the segments that show an anomaly — the anomaly is almost always where the insight lives.</p>
+            <p style="margin:0"><strong>Output:</strong> Not a report. A recommendation deck. 3–4 specific interventions, ranked by feasibility and expected impact. Every recommendation tied back to a data point.
+            </p>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="qa-item" style="border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden">
+          <div class="qa-q" onclick="toggleQA(this)" style="background:#F9FAFB">
+            What\'s the difference between a finding and an insight? Give me a concrete example. <span style="font-size:10px;color:var(--muted);font-weight:400">Research Thinking</span>
+          </div>
+          <div class="qa-a" style="display:none;padding:14px 16px;font-size:13px;line-height:1.7">
+            <p style="margin:0 0 10px">A finding is what the data shows. An insight is what it means for the brand and what should change as a result. The finding lives in the spreadsheet. The insight requires a step further.</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
+              <div style="background:#FEF2F2;border-radius:7px;padding:11px 13px;border-left:3px solid #DC2626">
+                <div style="font-size:11px;font-weight:700;color:#991B1B;margin-bottom:5px">Finding (necessary, not sufficient)</div>
+                <p style="font-size:12px;margin:0;line-height:1.6">"Women aged 25–34 rate Brand X significantly lower on 'modern and relevant' than men in the same cohort — 3.1 vs 4.2 on a 5-point scale."</p>
+              </div>
+              <div style="background:#F0FDF4;border-radius:7px;padding:11px 13px;border-left:3px solid #16A34A">
+                <div style="font-size:11px;font-weight:700;color:#166534;margin-bottom:5px">Insight + Intervention (what you\'re paid to produce)</div>
+                <p style="font-size:12px;margin:0;line-height:1.6">"Brand X\'s communication has been skewing male in its imagery and aspirational cues. Women in this cohort aren\'t rejecting the product — they\'re not seeing themselves in the brand. The intervention is in the visual and tonality direction of the next campaign, not in distribution or pricing."</p>
+              </div>
+            </div>
+            <p style="margin:0;font-size:12.5px">The test: can you link the data point to a specific lever the client can pull? If yes, it\'s an insight. If you\'re still describing the pattern, it\'s a finding.</p>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="qa-item" style="border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden">
+          <div class="qa-q" onclick="toggleQA(this)" style="background:#F9FAFB">
+            A client looks at your data and says "this doesn\'t match what we see in our internal numbers." How do you handle it? <span style="font-size:10px;color:var(--muted);font-weight:400">Client Handling</span>
+          </div>
+          <div class="qa-a" style="display:none;padding:14px 16px;font-size:13px;line-height:1.7">
+            <p style="margin:0 0 8px">First, take it seriously rather than defending the data. This is not a threat to the project — it\'s actually useful information.</p>
+            <p style="margin:0 0 8px"><strong>Step 1 — Reconcile the constructs.</strong> Internal numbers and primary research often measure different things. Sales data shows what people bought. Survey data shows what people think and feel. Both can be right simultaneously. Ask: are we measuring the same thing? Same geography? Same time window? Same consumer segment?</p>
+            <p style="margin:0 0 8px"><strong>Step 2 — If there\'s a genuine contradiction after reconciliation:</strong> present both data points to the client alongside a hypothesis for why they diverge. That divergence is often the most interesting finding in the entire project. A brand whose salience scores are high but whose sales are flat is telling you something about conversion that neither dataset alone would reveal.</p>
+            <p style="margin:0 0 8px"><strong>Step 3 — What not to do:</strong> quietly adjust the analysis to match their expectation. The value of external research is precisely that it\'s independent. A team lead who caves on data quality under client pressure hasn\'t done a Brandscan project — they\'ve done a validation exercise.</p>
+            <p style="margin:0">Frame it as: "I\'d like to understand your data better so we can give you a more complete picture" — not "you\'re wrong."</p>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="qa-item" style="border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden">
+          <div class="qa-q" onclick="toggleQA(this)" style="background:#F9FAFB">
+            Walk me through how you\'d use a specific data tool to surface an insight for a brand. Pick any tool and any scenario. <span style="font-size:10px;color:var(--muted);font-weight:400">Tool Demonstration</span>
+          </div>
+          <div class="qa-a" style="display:none;padding:14px 16px;font-size:13px;line-height:1.7">
+            <p style="margin:0 0 8px"><em>This is a "show don\'t tell" question. Pick one tool you actually know well, and walk through the actual steps. Two strong examples:</em></p>
+            <p style="margin:0 0 8px"><strong>Example A — SPSS for brand perception segmentation:</strong> "I have a survey dataset with 12 brand attribute ratings from 200 respondents. My first step is reliability — I run Cronbach\'s alpha to check whether the attributes hang together coherently. Then I run a principal components analysis to reduce the 12 attributes to 3–4 underlying factors. Those factors become the axes of the perceptual map. Then I run a cluster analysis on the factor scores to identify consumer segments with meaningfully different brand perceptions. Each cluster becomes a distinct audience for the recommendation. The client doesn\'t get 12 tables of attribute ratings — they get a perceptual map and 3 audience profiles with different implications."</p>
+            <p style="margin:0"><strong>Example B — Google Trends for category pulse:</strong> "Before writing a single survey question, I\'d spend 30 minutes on Google Trends. Search interest over 5 years tells me whether the category is growing or declining. Related queries tell me what consumers associate with the brand and what they\'re actively looking for. Regional interest tells me where the brand is and isn\'t performing. This takes no budget, shapes the entire research design, and I have a hypothesis-driven survey rather than a generic brand health questionnaire."</p>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="qa-item" style="border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden">
+          <div class="qa-q" onclick="toggleQA(this)" style="background:#F9FAFB">
+            How do you manage a team where different members have very different data skill levels? <span style="font-size:10px;color:var(--muted);font-weight:400">Leadership & Team Management</span>
+          </div>
+          <div class="qa-a" style="display:none;padding:14px 16px;font-size:13px;line-height:1.7">
+            <p style="margin:0 0 8px">Map the work to the person, not the other way around. In a 4–5 person team, you don\'t need everyone to run SPSS. What you need is: one person who owns data integrity and analysis; one who owns client communication and insight framing; one who owns the deck and narrative; one who owns fieldwork and primary data collection. The lead\'s job is to make sure those tracks don\'t operate in silos.</p>
+            <p style="margin:0 0 8px"><strong>For the skill gap specifically:</strong> pair a lower-skill member with a higher-skill one on a specific task rather than reassigning entirely. The timeline is tight, but the learning is part of the value. A member who doesn\'t know SPSS but runs 6 IDIs and codes the transcripts has contributed analytically — qualitative rigor is as important as quantitative.</p>
+            <p style="margin:0 0 8px"><strong>The critical integration point:</strong> the analysis person and the deck person need to be in the same room when the story is being shaped. Otherwise you get technically correct analysis in a badly told deck, which defeats the purpose. My role as lead is to be that connective tissue.</p>
+            <p style="margin:0"><strong>On accountability:</strong> set clear ownership before week 1 ends. Every deliverable has one name against it. That\'s not about blame — it\'s about making sure nothing falls through the gap between "I thought you were handling that."</p>
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="qa-item" style="border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden">
+          <div class="qa-q" onclick="toggleQA(this)" style="background:#F9FAFB">
+            You have 6 weeks and a brand client in a category you\'ve never studied. Walk me through your week-by-week plan. <span style="font-size:10px;color:var(--muted);font-weight:400">Project Planning</span>
+          </div>
+          <div class="qa-a" style="display:none;padding:14px 16px;font-size:13px;line-height:1.7">
+            <table class="ctbl" style="width:100%;font-size:12px">
+              <tr><th style="width:15%">Week</th><th>Focus</th><th>Key outputs</th></tr>
+              <tr>
+                <td><strong>Week 1</strong></td>
+                <td>Diagnose & design. Client brief deep-dive. Secondary research on category, category benchmarks, competitor mapping. Design the survey and discussion guide. Define the 3–4 core research questions the study must answer.</td>
+                <td>Research brief signed off with client. Survey instrument ready. Secondary data snapshot.</td>
+              </tr>
+              <tr>
+                <td><strong>Week 2</strong></td>
+                <td>Field. Survey live — targeting 150+ responses. Run 4–6 IDIs in parallel. Don\'t wait for full data to close — start reading patterns as data comes in. Begin secondary research synthesis.</td>
+                <td>Survey responses (100+). 3 IDI transcripts done and coded.</td>
+              </tr>
+              <tr>
+                <td><strong>Week 3</strong></td>
+                <td>Analyse. Clean data, run cross-tabs and segmentation. Hypothesis-driven: go into the analysis knowing what you\'re looking for. Weekly check-in with client on preliminary directions — not final findings, but early hypotheses. This prevents a week-6 surprise.</td>
+                <td>Draft perceptual map. 3–4 hypothesis statements with data backing.</td>
+              </tr>
+              <tr>
+                <td><strong>Week 4</strong></td>
+                <td>Insight build. Translate the analytical output into the Observation → So-what → Intervention format. Prioritise 3–4 recommendations. Stress-test each: is the data strong enough to support this claim?</td>
+                <td>Insight deck draft. Prioritised intervention list with feasibility/impact assessment.</td>
+              </tr>
+              <tr>
+                <td><strong>Week 5</strong></td>
+                <td>Refine & rehearse. Tighten the deck. Reduce to 10–12 slides. One full internal rehearsal with the team playing the client role and asking hard questions.</td>
+                <td>Final deck. Q&A prep list. Every team member knows every slide.</td>
+              </tr>
+              <tr>
+                <td><strong>Week 6</strong></td>
+                <td>Deliver. Client presentation. The structure: Situation → Research design → Key findings (3–4) → Insights with so-what → Interventions ranked by priority. Be ready for the client to push back on any slide.</td>
+                <td>Presentation. Follow-up one-pager with recommendations if asked.</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="qa-item" style="border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden">
+          <div class="qa-q" onclick="toggleQA(this)" style="background:#F9FAFB">
+            What does good data visualisation look like in a client context vs. an academic one? <span style="font-size:10px;color:var(--muted);font-weight:400">Visualisation & Communication</span>
+          </div>
+          <div class="qa-a" style="display:none;padding:14px 16px;font-size:13px;line-height:1.7">
+            <p style="margin:0 0 8px">In an academic context, completeness is the standard — you show all the data and let the reader draw conclusions. In a client context, <strong>clarity is the standard</strong> — the chart should make one point, and it should make it instantly. A brand manager is not going to read a table with 14 rows.</p>
+            <p style="margin:0 0 8px"><strong>Practical rules:</strong></p>
+            <ul style="margin:0 0 8px;padding-left:18px;line-height:1.8">
+              <li><strong>The chart title carries the insight, not the label.</strong> "Brand X awareness gap is widest in the 25–34 cohort" is a chart title. "Awareness by age group" is a label. The insight goes in the title.</li>
+              <li><strong>One chart, one point.</strong> If a chart needs a 3-sentence explanation, it hasn\'t been designed for a client. Redesign it.</li>
+              <li><strong>Colour carries meaning.</strong> The one bar or line that matters is in your accent colour. Everything else is grey. If two things are equally important, your slide has a structural problem, not a colour problem.</li>
+              <li><strong>Fewer chart types.</strong> Bar for comparison. Line for trend. Scatter for correlation. Perceptual map for positioning. Pick the one that shows your point most directly and stay with it throughout the deck for consistency.</li>
+              <li><strong>No 3D charts, no pie charts with more than 4 slices, no dual-axis charts unless the relationship between the axes is the point.</strong></li>
+            </ul>
+            <p style="margin:0">The test: can the client understand the chart in 5 seconds without reading a caption? If yes, it\'s a client chart. If no, it\'s still an analyst chart.</p>
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="qa-item" style="border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden">
+          <div class="qa-q" onclick="toggleQA(this)" style="background:#F9FAFB">
+            What are you actually measuring when you run a factor analysis on brand attribute data? Why not just use the raw scores? <span style="font-size:10px;color:var(--muted);font-weight:400">Statistical Depth</span>
+          </div>
+          <div class="qa-a" style="display:none;padding:14px 16px;font-size:13px;line-height:1.7">
+            <p style="margin:0 0 8px">When you ask 200 respondents to rate a brand on 12 attributes — innovative, trustworthy, modern, value-for-money, premium, etc. — many of those attributes are correlated. "Premium" and "high quality" will move together. "Good value" and "affordable" will move together. Factor analysis reduces those 12 correlated variables to 3–4 underlying dimensions that explain the variance in the data.</p>
+            <p style="margin:0 0 8px"><strong>Why not use raw scores?</strong> Two reasons. First, you\'d be reporting 12 numbers where 4 would do. Second, the raw scores don\'t tell you the underlying structure of the brand\'s perceptual space. Factor analysis reveals that structure. It tells you that when consumers rate this brand, they\'re really responding to 3 things: a quality/premium dimension, a price/value dimension, and a modernity/relevance dimension. Those factors become the axes of your perceptual map.</p>
+            <p style="margin:0">Practically: run the factor analysis in SPSS (Principal Components, Varimax rotation). Check that each factor has an eigenvalue above 1. Check the factor loadings — attributes that load above 0.6 on a factor are cleanly part of it. Name each factor based on its highest-loading attributes. Then use the factor scores as the inputs to your perceptual map and your cluster analysis.</p>
+          </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="qa-item" style="border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden">
+          <div class="qa-q" onclick="toggleQA(this)" style="background:#F9FAFB">
+            You\'re presenting to the client and your recommended intervention is something they clearly don\'t want to hear. How do you handle it? <span style="font-size:10px;color:var(--muted);font-weight:400">Difficult Conversations</span>
+          </div>
+          <div class="qa-a" style="display:none;padding:14px 16px;font-size:13px;line-height:1.7">
+            <p style="margin:0 0 8px">Don\'t soften the finding to the point where it loses its meaning. The client hired the team for an external, independent view. If you dilute the recommendation because it\'s uncomfortable, you\'ve given them a validation exercise, not research.</p>
+            <p style="margin:0 0 8px"><strong>The framing matters:</strong> lead with the data, not the recommendation. "Here is what 185 consumers told us, and here is what the pattern means." The data is the authority, not you. This takes the personal edge off a difficult message — you\'re not telling them they got it wrong; the consumer data is.</p>
+            <p style="margin:0 0 8px"><strong>Acknowledge the constraint:</strong> "We understand this isn\'t what you planned for next quarter. Given that, here are two versions of the intervention — the full version and a phased version that works within your current campaign cycle." Give them a path forward, not just a problem.</p>
+            <p style="margin:0"><strong>What to avoid:</strong> hedging so much that the recommendation becomes meaningless ("there might potentially be some opportunity to perhaps consider..."). If the data supports the recommendation, state it clearly. You can be direct without being adversarial.</p>
+          </div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="qa-item" style="border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden">
+          <div class="qa-q" onclick="toggleQA(this)" style="background:#F9FAFB">
+            Why do you want to be Team Lead rather than a team member? <span style="font-size:10px;color:var(--muted);font-weight:400">Motivation & Role Clarity</span>
+          </div>
+          <div class="qa-a" style="display:none;padding:14px 16px;font-size:13px;line-height:1.7">
+            <p style="margin:0 0 8px">The honest answer — and the one that actually lands in interviews — is not "I want the responsibility" or "I\'m good at leading." It\'s a specific view of what the role does that a team member role doesn\'t.</p>
+            <p style="margin:0 0 8px">As a team member, you own a track. As a lead, you own the integration. The most interesting and most difficult part of a project like this is the translation layer: taking what the analysis says and making it into something the client can act on. That translation requires someone who is simultaneously close to the data and close to the client conversation. The lead role is that person.</p>
+            <p style="margin:0">I\'ve also found that the quality of the output in group research projects is usually limited not by the analysis but by the synthesis — how the findings get assembled into a coherent story. I want to be the person responsible for that, because it\'s where I think I add the most value.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- WHAT STRONG LOOKS LIKE -->
+    <div class="ip-section">
+      <div class="ip-head" style="background:#F0FDF4">
+        <div class="ip-num" style="background:#166534">&#x2713;</div>
+        <div class="ip-title" style="color:#166534">What a Strong Candidate Looks Like in the Room</div>
+      </div>
+      <div style="padding:14px 16px">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+          <div style="background:#EFF6FF;border-radius:8px;padding:12px 14px">
+            <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:5px">On tools</div>
+            <p style="font-size:12px;margin:0;line-height:1.6">Doesn\'t say "I\'ve used SPSS." Says "I ran a factor analysis on the 12 brand attribute items to collapse them into 3 underlying dimensions — that\'s what gave us the perceptual map." Specificity signals real proficiency.</p>
+          </div>
+          <div style="background:#F0FDF4;border-radius:8px;padding:12px 14px">
+            <div style="font-size:11px;font-weight:700;color:#166534;margin-bottom:5px">On insights</div>
+            <p style="font-size:12px;margin:0;line-height:1.6">Every finding connects to a brand decision. The client should leave the room knowing exactly what to do differently and why the data supports it — not just what the numbers said.</p>
+          </div>
+          <div style="background:#FFF7ED;border-radius:8px;padding:12px 14px">
+            <div style="font-size:11px;font-weight:700;color:#92400E;margin-bottom:5px">On leadership</div>
+            <p style="font-size:12px;margin:0;line-height:1.6">Takes ownership of the full output, not just their section. If the deck isn\'t landing, fixes it regardless of who owns that slide. The lead\'s name is on the whole thing.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
